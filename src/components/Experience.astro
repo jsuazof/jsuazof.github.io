@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Finalice exitosamente el bootcamp FullStack Java",
+    company: "Talento Digital",
+    description:
+      "Desarrollo de una billetera digital(Java Spring - MySql).",
+    link: "https://www.github.com/jsuazof",
+  },
+  {
+    date: "Enero - Abril 2023",
+    title: "Desarrollador FullStack",
+    company: "Desafío Latam",
+    description:
+      "Desarrollo de página web para entrevistas técnicas. Uso de Docker, Jekyll, HTML, CSS, Git. Desarrollo de sitio para consultas SQL, Uso de NextJS, API, Login de acceso.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
