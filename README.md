@@ -1,7 +1,3 @@
-# Personal Portfolio Website Template
-
-![Personal Porfolio Website Template](public/social_img.webp)
-
 # Portafolio de Cloud Architect
 
 Este portafolio tiene como propósito presentar la experiencia, proyectos y conocimientos de un **Cloud Architect**. Aquí se muestran habilidades en el diseño, implementación y gestión de soluciones en la nube, así como artículos técnicos, certificaciones, casos de éxito y recursos relevantes para empresas y profesionales interesados en arquitectura cloud.
