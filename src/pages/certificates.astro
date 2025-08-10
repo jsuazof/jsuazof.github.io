@@ -1,0 +1,228 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout title="Certificates" sideBarActiveItemID="certificates">
+	<div>
+		<div class="text-3xl w-full font-bold mb-5">Professional Certifications & Training</div>
+		<p class="text-lg mb-8">A comprehensive collection of my professional certifications, training programs, and continuous learning achievements in cloud computing, development, and IT infrastructure.</p>
+	</div>
+
+	<!-- AWS Certifications -->
+	<div class="mb-8">
+		<div class="text-2xl font-bold mb-4 text-primary">AWS Cloud Certifications</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<Card
+				title="AWS Cloud Practitioner"
+				img="/post_img.webp"
+				desc="AWS Cloud Practitioner certification covering fundamental AWS cloud concepts and services."
+				url="/certificates/AWS_CloudPractitioner.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Technical Essentials"
+				img="/post_img.webp"
+				desc="AWS Technical Essentials training covering core AWS services and best practices."
+				url="/certificates/AWS_TechnicalEssentials.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Solutions Architect"
+				img="/post_img.webp"
+				desc="AWS Solutions Architect Associate certification for designing scalable cloud solutions."
+				url="/certificates/AWS_SolutionsArchitect.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Developer Associate"
+				img="/post_img.webp"
+				desc="AWS Developer Associate certification for building and deploying applications on AWS."
+				url="/certificates/AWS_Developer.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS SysOps Administrator"
+				img="/post_img.webp"
+				desc="AWS SysOps Administrator certification for operational excellence and troubleshooting."
+				url="/certificates/AWS_SysOps.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS DevOps Engineer"
+				img="/post_img.webp"
+				desc="AWS DevOps Engineer Professional certification for CI/CD and automation practices."
+				url="/certificates/AWS_DevOps.pdf"
+				badge="AWS"
+			/>
+		</div>
+	</div>
+
+	<!-- Advanced AWS Specialties -->
+	<div class="mb-8">
+		<div class="text-2xl font-bold mb-4 text-secondary">Advanced AWS Specialties</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<Card
+				title="AWS Advanced Networking"
+				img="/post_img.webp"
+				desc="AWS Advanced Networking Specialty for complex network architectures and optimization."
+				url="/certificates/AWS_AdvancedNetworking.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Security Specialty"
+				img="/post_img.webp"
+				desc="AWS Security Specialty for implementing secure cloud architectures and compliance."
+				url="/certificates/AWS_Security.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Machine Learning"
+				img="/post_img.webp"
+				desc="AWS Machine Learning Specialty for AI/ML solutions and data analytics."
+				url="/certificates/AWS_MachineLearning.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Database Specialty"
+				img="/post_img.webp"
+				desc="AWS Database Specialty for database design, migration, and optimization."
+				url="/certificates/AWS_Database.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS Data Analytics"
+				img="/post_img.webp"
+				desc="AWS Data Analytics Specialty for big data processing and analytics solutions."
+				url="/certificates/AWS_DataAnalytics.pdf"
+				badge="AWS"
+			/>
+			<Card
+				title="AWS SAP on AWS"
+				img="/post_img.webp"
+				desc="AWS SAP on AWS Specialty for enterprise SAP workloads and migrations."
+				url="/certificates/AWS_SAP.pdf"
+				badge="AWS"
+			/>
+		</div>
+	</div>
+
+	<!-- Other Cloud & Development Certifications -->
+	<div class="mb-8">
+		<div class="text-2xl font-bold mb-4 text-success">Other Cloud & Development</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<Card
+				title="Oracle Cloud Infrastructure"
+				img="/post_img.webp"
+				desc="Oracle Cloud Infrastructure certification for enterprise cloud solutions and database management."
+				url="/certificates/Oracle_Cloud.pdf"
+				badge="Oracle"
+			/>
+			<Card
+				title="Redis for Java Developers"
+				img="/post_img.webp"
+				desc="Redis certification for Java developers covering caching and data management."
+				url="/certificates/Redis_Java.pdf"
+				badge="Redis"
+			/>
+			<Card
+				title="Jira Fundamentals"
+				img="/post_img.webp"
+				desc="Atlassian Jira fundamentals certification for project management and issue tracking."
+				url="#"
+				badge="Atlassian"
+			/>
+			<Card
+				title="Confluence Fundamentals"
+				img="/post_img.webp"
+				desc="Atlassian Confluence fundamentals certification for team collaboration and documentation."
+				url="#"
+				badge="Atlassian"
+			/>
+		</div>
+	</div>
+
+	<!-- Academic & Professional Development -->
+	<div class="mb-8">
+		<div class="text-2xl font-bold mb-4 text-accent">Academic & Professional Development</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<Card
+				title="IPCHILE Diplomado Certificate"
+				img="/post_img.webp"
+				desc="Professional development program certificate from IPCHILE."
+				url="/certificates/Diplomado - Certificado IPCHILE.pdf"
+				badge="Academic"
+			/>
+			<Card
+				title="IPCHILE Module Diploma"
+				img="/post_img.webp"
+				desc="Module completion diploma from IPCHILE professional development program."
+				url="/certificates/Diplomado - Diploma módulo  IPCHILE.pdf"
+				badge="Academic"
+			/>
+		</div>
+	</div>
+	
+	<!-- Bootcamp Certifications -->
+	<div class="mb-8">
+		<div class="text-2xl font-bold mb-4 text-info">Bootcamp & Training Programs</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<Card
+				title="Talento Digital FullStack Java Bootcamp"
+				img="/post_img.webp"
+				desc="FullStack Java development bootcamp covering Spring Boot, React, and modern web technologies."
+				url="#"
+				badge="Bootcamp"
+			/>
+			<Card
+				title="Alura Latam Backend Java"
+				img="/post_img.webp"
+				desc="Backend development program focusing on Java, Spring Framework, and database management."
+				url="#"
+				badge="Bootcamp"
+			/>
+			<Card
+				title="Desafío Latam Frontend Vue.js"
+				img="/post_img.webp"
+				desc="Frontend development program mastering Vue.js, HTML/CSS, and modern JavaScript frameworks."
+				url="#"
+				badge="Bootcamp"
+			/>
+		</div>
+	</div>
+
+	<!-- Additional Skills & Competencies -->
+	<div class="mb-8">
+		<div class="text-2xl font-bold mb-4 text-warning">Additional Skills & Competencies</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<div class="card bg-base-200 shadow-xl">
+				<div class="card-body">
+					<h3 class="card-title text-primary">Programming Languages</h3>
+					<p>Java, JavaScript, Python, HTML/CSS, Shell Scripting</p>
+				</div>
+			</div>
+			<div class="card bg-base-200 shadow-xl">
+				<div class="card-body">
+					<h3 class="card-title text-secondary">Frameworks & Tools</h3>
+					<p>Spring Boot, Next.js, Vue.js, Docker, Kubernetes, Git</p>
+				</div>
+			</div>
+			<div class="card bg-base-200 shadow-xl">
+				<div class="card-body">
+					<h3 class="card-title text-accent">Databases & Cloud</h3>
+					<p>MySQL, Redis, AWS, Google Cloud, Oracle Cloud</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact Section -->
+	<div class="text-center mt-12">
+		<div class="text-2xl font-bold mb-4">Interested in Working Together?</div>
+		<p class="text-lg mb-6">Let's discuss how my certifications and expertise can benefit your project.</p>
+		<div class="flex justify-center gap-4">
+			<a href="https://www.linkedin.com/in/jorgesuazof/" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
+			<a href="mailto:jsuazof@gmail.com" class="btn btn-outline">Send Email</a>
+		</div>
+	</div>
+</BaseLayout>
