@@ -7,5 +7,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://jsuazof.github.io',
   base: '/portfolio-cloud-architect',
+  publicDir: 'public',
   integrations: [mdx(), sitemap(), tailwind()]
 });
