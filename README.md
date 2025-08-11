@@ -34,7 +34,7 @@ Currently enrolled in **Talento Digital** program, focusing on **Cloud Architect
 
 ## 🎯 Live Demo
 
-- **Portfolio Website**: [https://jsuazof.github.io/portfolio-cloud-architect](https://jsuazof.github.io/portfolio-cloud-architect)
+- **Portfolio Website**: [https://jsuazof.github.io](https://jsuazof.github.io)
 - **LinkedIn Profile**: [https://www.linkedin.com/in/jorgesuazof](https://www.linkedin.com/in/jorgesuazof)
 - **GitHub Profile**: [https://github.com/jsuazof](https://github.com/jsuazof)
 
