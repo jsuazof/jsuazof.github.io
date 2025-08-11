@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
-// import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jsuazof.github.io',
+  site: 'https://jsuazof.github.io/portfolio-cloud-architect/',
+  base: '/portfolio-cloud-architect/',
   publicDir: 'public',
-  integrations: [mdx(), /* sitemap(), */ tailwind()]
+  integrations: [mdx(), tailwind()]
 });
