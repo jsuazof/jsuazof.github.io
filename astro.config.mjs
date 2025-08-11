@@ -6,7 +6,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jsuazof.github.io',
-  // base: '/portfolio-cloud-architect', // Temporarily commented out for testing
   publicDir: 'public',
   integrations: [mdx(), /* sitemap(), */ tailwind()]
 });
