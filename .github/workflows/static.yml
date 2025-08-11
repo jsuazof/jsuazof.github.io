@@ -25,18 +25,37 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
           
+      - name: Check Node.js and pnpm versions
+        run: |
+          node --version
+          pnpm --version
+          npm --version
+          
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+        
+      - name: Check build directory
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          ls -la
+          echo "Source directory contents:"
+          ls -la src/
         
       - name: Build
-        run: pnpm build
+        run: |
+          echo "Starting build..."
+          pnpm build
+          echo "Build completed successfully!"
+          echo "Build output contents:"
+          ls -la dist/
         
       - name: Ensure .nojekyll file exists
         run: |
