@@ -8,7 +8,7 @@ pricing: "Gratis"
 oldPricing: "" 
 badge: "Astro" 
 checkoutUrl: "https://github.com/jsuazof/jorgesuazocv" 
-heroImage: "../assets/images/projects/portfolio-jorge-suazo.png" 
+heroImage: "../assets/images/projects/portfoliojorgesuazo.webp" 
 --- 
 
 Portafolio personal desarrollado con tecnologías modernas como 
