@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jsuazof.github.io/',
-  base: '/jsuazof.github.io',
+  base: '/jsuazof.github.io/',
   integrations: [mdx(), tailwind()]
 });
