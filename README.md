@@ -1,4 +1,4 @@
-# Jorge Suazo - Cloud Architect & DevOps Engineer Portfolio
+# Jorge Suazo - Cloud Architect & FullStackDeveloper Portfolio
 
 ![Jorge Suazo Portfolio](src/assets/images/profile.webp)
 
@@ -46,40 +46,6 @@ Currently enrolled in **Talento Digital** program, focusing on **Cloud Architect
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript for robust development
 - **[GitHub Pages](https://pages.github.com/)** - Static site hosting with automatic deployment
 - **[GitHub Actions](https://github.com/features/actions)** - CI/CD automation for seamless deployments
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v18 or higher)
-- pnpm package manager
-
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/jsuazof/portfolio-cloud-architect.git
-cd portfolio-cloud-architect
-
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-
-# Build for production
-pnpm build
-```
-
-### Development
-```bash
-# Run development server
-pnpm dev
-
-# Build the site
-pnpm build
-
-# Preview production build
-pnpm preview
-```
 
 ## 📁 Project Structure
 
