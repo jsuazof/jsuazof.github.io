@@ -25,39 +25,4 @@
   </div>
 </div>
 
-<script>
-  // Theme toggle functionality
-  const themeToggle = document.getElementById('theme-toggle');
-  const darkIcon = document.getElementById('theme-toggle-dark-icon');
-  const lightIcon = document.getElementById('theme-toggle-light-icon');
-  
-  // Get current theme from localStorage or default to 'elegant'
-  const currentTheme = localStorage.getItem('theme') || 'elegant';
-  
-  // Set initial theme
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  
-  // Update icon visibility based on current theme
-  function updateIcon(theme) {
-    if (theme === 'elegant-dark') {
-      darkIcon.classList.add('hidden');
-      lightIcon.classList.remove('hidden');
-    } else {
-      darkIcon.classList.remove('hidden');
-      lightIcon.classList.add('hidden');
-    }
-  }
-  
-  // Initialize icon
-  updateIcon(currentTheme);
-  
-  // Toggle theme on button click
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'elegant' ? 'elegant-dark' : 'elegant';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcon(newTheme);
-  });
-</script>
+
