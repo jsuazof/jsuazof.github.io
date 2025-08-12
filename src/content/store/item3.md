@@ -1,6 +1,6 @@
 --- 
 title: "Portafolio Jorge Suazo" 
-description: "Portafolio personal desarrollado con Astro, TailwindCSS y daisyUI. Muestra proyectos, experiencia y habilidades técnicas como Desarrollador FullStack y Cloud Architect." 
+description: "Portafolio personal desarrollado con Astro, TailwindCSS y daisyUI. Muestra proyectos, experiencia y habilidades técnicas como Cloud Architect & FullStack Developer." 
 custom_link_label: "Ver Sitio" 
 custom_link: "https://jorgesuazocv.netlify.app" 
 updatedDate: "2025-08-10" 
@@ -8,7 +8,7 @@ pricing: "Gratis"
 oldPricing: "" 
 badge: "Astro" 
 checkoutUrl: "https://github.com/jsuazof/jorgesuazocv" 
-heroImage: "../assets/images/projects/portfoliojorgesuazo.webp" 
+heroImage: "../../assets/images/itemPreview.webp" 
 --- 
 
 Portafolio personal desarrollado con tecnologías modernas como 

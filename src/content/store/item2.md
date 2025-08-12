@@ -8,7 +8,7 @@ pricing: "Gratis"
 oldPricing: "" 
 badge: "Open Source" 
 checkoutUrl: "https://github.com/jsuazof/entrevistas-tecnicas" 
-heroImage: "../assets/images/projects/entrevistastecnicas.webp" 
+heroImage: "../../assets/images/projects/entrevistastecnicas.webp" 
 --- 
 
 Proyecto educativo diseñado para ayudar a desarrolladores a prepararse para entrevistas técnicas. Incluye ejercicios prácticos de lógica, consultas SQL, algoritmos básicos y buenas prácticas de programación. 

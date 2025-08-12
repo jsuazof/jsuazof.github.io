@@ -3,6 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
+import sqlInteractiveImg from "../assets/images/projects/sqlinteractivo.webp";
+import entrevistasImg from "../assets/images/projects/entrevistastecnicas.webp";
+import portfolioImg from "../assets/images/itemPreview.webp";
 // Obtener los últimos posts del blog (si tienes)
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),);
 const last_posts = posts.slice(0, 3);
@@ -13,27 +16,27 @@ const last_posts = posts.slice(0, 3);
     <div class="text-xl py-1">Hola 👋</div>
     <div class="text-5xl font-bold">Soy Jorge Suazo</div>
     <div class="text-3xl py-3 font-bold">
-      Desarrollador FullStack & Cloud Architect
+      Cloud Architect & FullStack Developer
     </div>
     <div class="py-2">
       <p class="text-lg">
-        Desarrollador Web desde 2021, recientemente completé el Bootcamp de
-        Talento Digital Fullstack Java. Vivo en Santiago de Chile y he trabajado
-        en diversos entornos como Minería, Proyectos de Ingeniería y TV
-        Streaming. Mi formación y experiencia me han permitido desarrollar
-        habilidades sólidas en programación web y gestión de proyectos.
+        Cloud Architect & FullStack Developer con más de 30 años de experiencia en TI.
+        Especializado en soluciones cloud escalables en AWS, desarrollo web moderno y
+        arquitecturas distribuidas. Vivo en Santiago de Chile y he liderado proyectos
+        en Minería, Ingeniería y Streaming de Media. Mi experiencia combina conocimiento
+        técnico profundo con liderazgo estratégico en transformación digital.
       </p>
     </div>
     <div class="mt-8">
       <a
-        class="btn"
+        class="btn btn-primary"
         href="https://www.linkedin.com/in/jorgesuazof/"
-        target="_blank">Conectemos</a
+        target="_blank">Conectemos en LinkedIn</a
       >
       <a
         href="https://github.com/jsuazof"
         target="_blank"
-        class="btn btn-outline ml-5"
+        class="btn btn-outline btn-secondary ml-5"
       >
         Ver mi GitHub
       </a>
@@ -43,7 +46,7 @@ const last_posts = posts.slice(0, 3);
   <div class="text-3xl w-full font-bold mb-5">Mis Proyectos</div>
   <HorizontalCard
     title="SQL Interactivo"
-    img="/images/projects/sql-interactive.png"
+    img={sqlInteractiveImg}
     desc="Desarrollo de un sitio web para aprender y practicar consultas SQL con ejemplos interactivos."
     url="https://github.com/jsuazof/sql-interactive"
     target="_blank"
@@ -52,7 +55,7 @@ const last_posts = posts.slice(0, 3);
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Entrevistas Técnicas"
-    img="/images/projects/entrevistas-tecnicas.png"
+    img={entrevistasImg}
     desc="Plataforma con preguntas y ejercicios para preparar entrevistas técnicas en desarrollo."
     url="https://github.com/jsuazof/entrevistas-tecnicas"
     target="_blank"
@@ -61,7 +64,7 @@ const last_posts = posts.slice(0, 3);
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Portafolio Jorge Suazo"
-    img="/images/projects/portfolio-jorge-suazo.png"
+    img={portfolioImg}
     desc="Este portafolio personal, desarrollado con Astro, TailwindCSS y daisyUI."
     url="https://jorgesuazocv.netlify.app"
     target="_blank"

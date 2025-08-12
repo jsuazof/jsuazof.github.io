@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
+import postImg from "../assets/images/post_img.webp";
 ---
 
 <BaseLayout title="Certificates" sideBarActiveItemID="certificates">
@@ -15,42 +16,42 @@ import Card from "../components/Card.astro";
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			<Card
 				title="AWS Cloud Practitioner"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Cloud Practitioner certification covering fundamental AWS cloud concepts and services."
 				url="/certificates/AWS_CloudPractitioner.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Technical Essentials"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Technical Essentials training covering core AWS services and best practices."
 				url="/certificates/AWS_TechnicalEssentials.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Solutions Architect"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Solutions Architect Associate certification for designing scalable cloud solutions."
 				url="/certificates/AWS_SolutionsArchitect.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Developer Associate"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Developer Associate certification for building and deploying applications on AWS."
 				url="/certificates/AWS_Developer.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS SysOps Administrator"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS SysOps Administrator certification for operational excellence and troubleshooting."
 				url="/certificates/AWS_SysOps.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS DevOps Engineer"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS DevOps Engineer Professional certification for CI/CD and automation practices."
 				url="/certificates/AWS_DevOps.pdf"
 				badge="AWS"
@@ -64,42 +65,42 @@ import Card from "../components/Card.astro";
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			<Card
 				title="AWS Advanced Networking"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Advanced Networking Specialty for complex network architectures and optimization."
 				url="/certificates/AWS_AdvancedNetworking.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Security Specialty"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Security Specialty for implementing secure cloud architectures and compliance."
 				url="/certificates/AWS_Security.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Machine Learning"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Machine Learning Specialty for AI/ML solutions and data analytics."
 				url="/certificates/AWS_MachineLearning.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Database Specialty"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Database Specialty for database design, migration, and optimization."
 				url="/certificates/AWS_Database.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS Data Analytics"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS Data Analytics Specialty for big data processing and analytics solutions."
 				url="/certificates/AWS_DataAnalytics.pdf"
 				badge="AWS"
 			/>
 			<Card
 				title="AWS SAP on AWS"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="AWS SAP on AWS Specialty for enterprise SAP workloads and migrations."
 				url="/certificates/AWS_SAP.pdf"
 				badge="AWS"
@@ -113,28 +114,28 @@ import Card from "../components/Card.astro";
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<Card
 				title="Oracle Cloud Infrastructure"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Oracle Cloud Infrastructure certification for enterprise cloud solutions and database management."
 				url="/certificates/Oracle_Cloud.pdf"
 				badge="Oracle"
 			/>
 			<Card
 				title="Redis for Java Developers"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Redis certification for Java developers covering caching and data management."
 				url="/certificates/Redis_Java.pdf"
 				badge="Redis"
 			/>
 			<Card
 				title="Jira Fundamentals"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Atlassian Jira fundamentals certification for project management and issue tracking."
 				url="#"
 				badge="Atlassian"
 			/>
 			<Card
 				title="Confluence Fundamentals"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Atlassian Confluence fundamentals certification for team collaboration and documentation."
 				url="#"
 				badge="Atlassian"
@@ -148,14 +149,14 @@ import Card from "../components/Card.astro";
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 			<Card
 				title="IPCHILE Diplomado Certificate"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Professional development program certificate from IPCHILE."
 				url="/certificates/Diplomado - Certificado IPCHILE.pdf"
 				badge="Academic"
 			/>
 			<Card
 				title="IPCHILE Module Diploma"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Module completion diploma from IPCHILE professional development program."
 				url="/certificates/Diplomado - Diploma módulo  IPCHILE.pdf"
 				badge="Academic"
@@ -169,21 +170,21 @@ import Card from "../components/Card.astro";
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			<Card
 				title="Talento Digital FullStack Java Bootcamp"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="FullStack Java development bootcamp covering Spring Boot, React, and modern web technologies."
 				url="#"
 				badge="Bootcamp"
 			/>
 			<Card
 				title="Alura Latam Backend Java"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Backend development program focusing on Java, Spring Framework, and database management."
 				url="#"
 				badge="Bootcamp"
 			/>
 			<Card
 				title="Desafío Latam Frontend Vue.js"
-				img="images/post_img.webp"
+				img={postImg}
 				desc="Frontend development program mastering Vue.js, HTML/CSS, and modern JavaScript frameworks."
 				url="#"
 				badge="Bootcamp"
