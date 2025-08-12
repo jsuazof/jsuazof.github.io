@@ -1,6 +1,6 @@
 # Jorge Suazo - Cloud Architect & DevOps Engineer Portfolio
 
-![Jorge Suazo Portfolio](public/social_img.webp)
+![Jorge Suazo Portfolio](../assets/images/profile.webp)
 
 A comprehensive personal portfolio website showcasing expertise in cloud architecture, DevOps practices, and full-stack development. Built with modern web technologies and designed for professional presentation.
 

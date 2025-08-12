@@ -2,7 +2,7 @@
 title: "Cloud Architecture Fundamentals: Building Scalable Solutions on AWS"
 description: "Essential principles and best practices for designing scalable, secure, and cost-effective cloud architectures on Amazon Web Services."
 pubDate: "Dec 15 2024"
-heroImage: "/post_img.webp"
+heroImage: "images/post_img.webp"
 tags: ["aws", "cloud-architecture", "devops"]
 ---
 

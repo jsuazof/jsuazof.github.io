@@ -1,15 +1,27 @@
----
-title: "Demo Item 3"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-custom_link_label: "Custom Btn"
-custom_link: "https://customurl.com/"
-updatedDate: "Sep 11 2022"
-pricing: "$10"
-oldPricing: "$25.5"
-checkoutUrl: "https://checkouturl.com/"
-heroImage: "/itemPreview.webp"
----
+--- 
+title: "Portafolio Jorge Suazo" 
+description: "Portafolio personal desarrollado con Astro, TailwindCSS y daisyUI. Muestra proyectos, experiencia y habilidades técnicas como Desarrollador FullStack y Cloud Architect." 
+custom_link_label: "Ver Sitio" 
+custom_link: "https://jorgesuazocv.netlify.app" 
+updatedDate: "2025-08-10" 
+pricing: "Gratis" 
+oldPricing: "" 
+badge: "Astro" 
+checkoutUrl: "https://github.com/jsuazof/jorgesuazocv" 
+heroImage: "../assets/images/projects/portfolio-jorge-suazo.png" 
+--- 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Portafolio personal desarrollado con tecnologías modernas como 
+**Astro**, **TailwindCSS** y **daisyUI**. 
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Diseñado para mostrar mis proyectos, experiencia, habilidades y trayectoria como desarrollador FullStack con más de 30 años de experiencia en TI. 
+Este proyecto es completamente open source y sirve como ejemplo de cómo crear un sitio profesional, optimizado y con buen rendimiento usando herramientas modernas del ecosistema web. 
+
+### Características principales: 
+- Diseño limpio y responsivo 
+- Integración con GitHub y LinkedIn 
+- Secciones de proyectos, CV, blog y más 
+- Optimizado para SEO y velocidad 
+- Código abierto y fácil de personalizar 
+
+Ideal para quienes buscan crear su propio portafolio técnico desde cero.
