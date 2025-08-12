@@ -3,49 +3,64 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 ---
 
-<BaseLayout title = "Projects" sideBarActiveItemID="projects">
-  <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects Header</div>
+<BaseLayout title="Proyectos" sideBarActiveItemID="projects">
+  <!-- Sección: Proyectos Personales -->
+  <div class="text-3xl w-full font-bold mb-5">Proyectos Personales</div>
+  <HorizontalCard
+    title="SQL Interactivo"
+    img="/images/projects/sql-interactive.png"
+    desc="Sitio web educativo para aprender y practicar consultas SQL con ejemplos interactivos. Ideal para preparar entrevistas técnicas."
+    url="https://github.com/jsuazof/sql-interactive"
+    target="_blank"
+    badge="FullStack"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Entrevistas Técnicas"
+    img="/images/projects/entrevistas-tecnicas.png"
+    desc="Plataforma con preguntas y ejercicios comunes en entrevistas técnicas de desarrollo. Enfocada en lógica, SQL y buenas prácticas."
+    url="https://github.com/jsuazof/entrevistas-tecnicas"
+    target="_blank"
+    badge="Open Source"
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
+    title="Portafolio Jorge Suazo"
+    img="/images/projects/portfolio-jorge-suazo.png"
+    desc="Este portafolio personal, desarrollado con Astro, TailwindCSS y daisyUI. Diseño limpio, responsive y con soporte para CV, blog y proyectos."
+    url="https://github.com/jsuazof/jorgesuazocv"
+    target="_blank"
+    badge="Astro"
+  />
+  <div class="divider my-0"></div>
+  <!-- Sección: Herramientas y Aprendizaje -->
+  <div class="text-3xl w-full font-bold mb-5 mt-10">
+    Herramientas & Aprendizaje
   </div>
-
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Notas de Estudio: Java & Spring"
+    img="/images/projects/java-spring-notes.png"
+    desc="Apuntes y ejemplos prácticos sobre Java, Spring Boot, JPA y Hibernate. Recursos útiles para reforzar conocimientos backend."
+    url="https://github.com/jsuazof/java-spring-notes"
+    target="_blank"
+    badge="Java"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Cloud Architecture Playground"
+    img="/images/projects/cloud-playground.png"
+    desc="Proyectos de experimentación con AWS, Google Cloud y Oracle Cloud. Automatización, despliegue de APIs y gestión de recursos en la nube."
+    url="https://github.com/jsuazof/cloud-playground"
+    target="_blank"
+    badge="Cloud"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 4"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 5"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="DevOps Basics"
+    img="/images/projects/devops-basics.png"
+    desc="Configuraciones iniciales con GitHub Actions, CI/CD básico y buenas prácticas para despliegue automatizado de aplicaciones estáticas."
+    url="https://github.com/jsuazof/devops-basics"
+    target="_blank"
+    badge="DevOps"
   />
 </BaseLayout>

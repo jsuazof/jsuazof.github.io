@@ -3,90 +3,146 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<BaseLayout title="Curriculum" sideBarActiveItemID="cv">
+  <!-- Perfil Profesional -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <div class="text-3xl w-full font-bold">Perfil Profesional</div>
   </div>
-
   <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Desarrollador FullStack y <strong>Cloud Architect</strong> con más de 30 años
+    de experiencia en TI, combinando una sólida formación en infraestructura y redes
+    con habilidades modernas en desarrollo web, DevOps y arquitectura en la nube.
+    Especializado en soluciones escalables con <strong
+      >AWS, Google Cloud, Java, Spring y Astro</strong
+    >. Apasionado por la innovación, la automatización y el diseño de sistemas
+    resilientes.
   </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
-  </div>
-
+  <!-- Educación -->
+  <div class="mb-5"><div class="text-3xl w-full font-bold">Educación</div></div>
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+      title="Ingeniería en Informática"
+      subtitle="Universidad de los Lagos, Osorno, Chile"
     />
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
+      title="Técnico en Computación e Informática"
+      subtitle="Inacap, Osorno, Chile"
     />
   </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+  <!-- Bootcamps -->
+  <div class="mb-5"><div class="text-3xl w-full font-bold">Bootcamps</div></div>
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="FullStack Java Developer"
+      subtitle="Talento Digital, 2021"
+    >
+      Formación intensiva en desarrollo FullStack con Java, Spring Boot, MySQL,
+      HTML, CSS, JavaScript y herramientas DevOps.
+    </TimeLineElement>
+    <TimeLineElement title="Programación Web" subtitle="Alura Latam, 2021">
+      Cursos en Java, Spring, JPA, Hibernate y desarrollo backend.
+    </TimeLineElement>
+    <TimeLineElement title="Desarrollo Web" subtitle="Desafío Latam, 2021">
+      Fundamentos de HTML, CSS, JavaScript y Git.
+    </TimeLineElement>
   </div>
-
+  <!-- Experiencia Laboral -->
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experiencia Laboral</div>
+  </div>
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Cloud Architect & Network Engineer"
+      subtitle="Artifices.tv, Santiago, Chile | 2021 - Presente"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Diseño y gestión de infraestructura de red para plataformas de streaming.
+      Implementación de soluciones escalables en entornos cloud y híbridos.
+      Soporte técnico avanzado y automatización de tareas.
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Consultor IT / Freelance"
+      subtitle="Proyectos Independientes, Santiago, Chile | 2018 - 2021"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Asesoría en arquitectura de red, migración a la nube y desarrollo de
+      soluciones personalizadas para clientes en minería, ingeniería y medios
+      digitales.
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="SysAdmin & ProjectWise Administrator"
+      subtitle="Hatch IYC, Santiago, Chile | 2005 - 2018"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Administración de servidores, redes y plataformas colaborativas
+      (ProjectWise). Gestión de infraestructura TI para grandes proyectos de
+      ingeniería. Soporte a equipos multidisciplinarios.
     </TimeLineElement>
   </div>
-
+  <!-- Certificaciones -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <div class="text-3xl w-full font-bold">Certificaciones</div>
   </div>
-
   <ul class="list-disc mx-6 mb-10 grid gap-2">
     <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
+      <a href="https://www.oracle.com/cloud/certification/" target="_blank"
+        >Oracle Cloud Infrastructure Certified</a
+      >
     </li>
     <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
+      <a href="https://university.redislabs.com/" target="_blank"
+        >Redis for Java Developers</a
+      >
+    </li>
+    <li>
+      <a href="https://www.atlassian.com/certification/" target="_blank"
+        >Jira Fundamentals</a
+      >
+    </li>
+    <li>
+      <a href="https://www.atlassian.com/certification/" target="_blank"
+        >Confluence Fundamentals</a
+      >
     </li>
   </ul>
-
+  <!-- Habilidades Técnicas -->
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+    <div class="text-3xl w-full font-bold">Habilidades</div>
   </div>
-
   <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Tailwind CSS</li>
+    <li>Java</li>
+    <li>Spring Boot</li>
+    <li>MySQL</li>
+    <li>Git / GitHub</li>
+    <li>Next.js</li>
+    <li>Astro</li>
+    <li>Amazon Web Services (AWS)</li>
+    <li>Google Cloud Platform (GCP)</li>
+    <li>Oracle Cloud</li>
+    <li>DevOps</li>
+    <li>Redes & Seguridad</li>
+    <li>Linux / SysAdmin</li>
+    <li>VS Code</li>
+    <li>Docker (Fundamentos)</li>
+    <li>Automatización</li>
+    <li>Arquitectura de Soluciones</li>
+  </ul>
+  <!-- Idiomas -->
+  <div class="mb-5 mt-10">
+    <div class="text-3xl w-full font-bold">Idiomas</div>
+  </div>
+  <ul class="list-disc mx-6">
+    <li>Español - Nativo</li>
+    <li>Inglés - Profesional (B2)</li>
+  </ul>
+  <!-- Intereses -->
+  <div class="mb-5 mt-10">
+    <div class="text-3xl w-full font-bold">Intereses</div>
+  </div>
+  <ul class="list-disc mx-6">
+    <li>Música: Tocar guitarra y bajo, asistir a conciertos</li>
+    <li>Cine, teatro y cultura</li>
+    <li>Naturaleza, huertos y sostenibilidad</li>
   </ul>
 </BaseLayout>
