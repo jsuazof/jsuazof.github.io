@@ -10,7 +10,8 @@ const certificatesWithImages = await Promise.all(
       const imageModule = await import(`../assets/images/certificates/${baseName}.webp`);
       return { ...cert, image: imageModule.default };
     } catch (error) {
-      return cert;
+      // Return cert without image if file doesn't exist or is corrupted
+      return { ...cert, image: null };
     }
   })
 );
