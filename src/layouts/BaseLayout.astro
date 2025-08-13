@@ -22,6 +22,12 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
   </head>
   <body>
     <div class="drawer lg:drawer-open">
@@ -44,48 +50,59 @@ const {
     </div>
     
     <script is:inline>
-      function initTheme() {
-        const theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
-        updateIcons(theme);
-      }
-      
-      function updateIcons(theme) {
-        const isDark = theme === 'dark' || theme === 'elegant-dark';
+      window.themeManager = {
+        init() {
+          const theme = localStorage.getItem('theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          this.updateIcons(theme);
+        },
         
-        ['', '-sidebar'].forEach(suffix => {
-          const darkIcon = document.getElementById(`theme-toggle-dark-icon${suffix}`);
-          const lightIcon = document.getElementById(`theme-toggle-light-icon${suffix}`);
+        updateIcons(theme) {
+          const isDark = theme === 'dark';
           
-          if (darkIcon && lightIcon) {
-            if (isDark) {
-              darkIcon.classList.add('hidden');
-              lightIcon.classList.remove('hidden');
-            } else {
-              darkIcon.classList.remove('hidden');
-              lightIcon.classList.add('hidden');
+          ['', '-sidebar'].forEach(suffix => {
+            const darkIcon = document.getElementById(`theme-toggle-dark-icon${suffix}`);
+            const lightIcon = document.getElementById(`theme-toggle-light-icon${suffix}`);
+            
+            if (darkIcon && lightIcon) {
+              if (isDark) {
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+              } else {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+              }
             }
-          }
-        });
+          });
+        },
+        
+        toggle() {
+          const current = document.documentElement.getAttribute('data-theme');
+          const newTheme = current === 'dark' ? 'light' : 'dark';
+          
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          this.updateIcons(newTheme);
+        },
+        
+        bindEvents() {
+          ['theme-toggle', 'theme-toggle-sidebar'].forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+              btn.removeEventListener('click', this.toggle);
+              btn.addEventListener('click', () => this.toggle());
+            }
+          });
+        }
+      };
+      
+      function initPage() {
+        window.themeManager.init();
+        window.themeManager.bindEvents();
       }
       
-      function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-theme');
-        const newTheme = (current === 'dark' || current === 'elegant-dark') ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateIcons(newTheme);
-      }
-      
-      document.addEventListener('DOMContentLoaded', () => {
-        initTheme();
-        
-        ['theme-toggle', 'theme-toggle-sidebar'].forEach(id => {
-          const btn = document.getElementById(id);
-          if (btn) btn.addEventListener('click', toggleTheme);
-        });
-      });
+      document.addEventListener('DOMContentLoaded', initPage);
+      document.addEventListener('astro:page-load', initPage);
     </script>
   </body>
 </html>

@@ -10,7 +10,7 @@ const { sideBarActiveItemID } = Astro.props;
 >
   <!-- Foto de perfil -->
   <div class="w-fit mx-auto mt-5 mb-6">
-    <a href="/jsuazof.github.io/">
+    <a href="/">
       <div
         class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
       >
@@ -53,9 +53,9 @@ const { sideBarActiveItemID } = Astro.props;
       >
     </li>
   </ul>
-  <!-- Script para resaltar el ítem activo y cerrar drawer en móvil -->
   <script is:inline>
     (function () {
+      // Active menu item
       const activeItemID = "home";
       const activeClass = "bg-base-300";
       const link = document.querySelector(`[href="/${activeItemID}"]`);
@@ -63,10 +63,9 @@ const { sideBarActiveItemID } = Astro.props;
         link.parentElement.classList.add(activeClass);
       }
       
-      // Cerrar drawer en móvil al hacer clic en enlaces de navegación
-      const menuLinks = document.querySelectorAll('.menu a[href^="/jsuazof.github.io/"]');
+      // Close drawer on mobile
+      const menuLinks = document.querySelectorAll('.menu a[href^="/"]');
       const drawerToggle = document.getElementById('my-drawer');
-      
       menuLinks.forEach(link => {
         link.addEventListener('click', () => {
           if (drawerToggle && window.innerWidth < 1024) {
