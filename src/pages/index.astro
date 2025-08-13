@@ -63,15 +63,15 @@ const last_posts = posts.slice(0, 3);
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Portafolio Jorge Suazo"
+    title="Curriculum vitae Jorge Suazo"
     img={portfolioImg}
-    desc="Este portafolio personal, desarrollado con Astro, TailwindCSS y daisyUI."
+    desc="Este CV, desarrollado con Astro, TailwindCSS y daisyUI."
     url="https://jorgesuazocv.netlify.app"
     target="_blank"
   />
   <div class="divider my-0"></div>
   <!-- Últimos artículos del blog (solo si tienes blog) -->
-  {
+  <!-- {
     last_posts.length > 0 && (
       <>
         {" "}
@@ -95,7 +95,10 @@ const last_posts = posts.slice(0, 3);
       </>
     )
   }
+  -->
+
   <!-- Si no tienes blog, puedes mostrar esto -->
+  <!--
   {
     last_posts.length === 0 && (
       <div class="text-center py-6 text-gray-500 mt-8">
@@ -106,5 +109,6 @@ const last_posts = posts.slice(0, 3);
       </div>
     )
   }
+  -->
 </BaseLayout>
 ---
