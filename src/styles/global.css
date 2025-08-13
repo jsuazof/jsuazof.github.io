@@ -1,3 +1,25 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+/* Responsive improvements */
+@media (max-width: 1023px) {
+  .drawer-side {
+    z-index: 999;
+  }
+  
+  .drawer-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
