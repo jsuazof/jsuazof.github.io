@@ -9,7 +9,7 @@ const { activeSection } = Astro.props;
     <div class="flex items-center justify-between h-16">
       <!-- Logo/Profile -->
       <div class="flex items-center space-x-3">
-        <a href={new URL('/', Astro.site).pathname} class="flex items-center space-x-3 group">
+        <a href="/" class="flex items-center space-x-3 group">
           <div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-blue-500/20 group-hover:ring-blue-500/40 transition-all">
             <Image
               src={profileImg}
@@ -28,16 +28,16 @@ const { activeSection } = Astro.props;
 
       <!-- Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a href={new URL('/', Astro.site).pathname} class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'home' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
+        <a href="/" class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'home' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
           Inicio
         </a>
-        <a href={new URL('/projects', Astro.site).pathname} class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'projects' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
+        <a href="/projects/" class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'projects' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
           Proyectos
         </a>
-        <a href={new URL('/cv', Astro.site).pathname} class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'cv' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
+        <a href="/cv/" class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'cv' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
           CV
         </a>
-        <a href={new URL('/certificates', Astro.site).pathname} class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'certificates' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
+        <a href="/certificates/" class={`text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${activeSection === 'certificates' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300'}`}>
           Certificados
         </a>
       </nav>
@@ -68,16 +68,16 @@ const { activeSection } = Astro.props;
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-700 py-4">
       <div class="flex flex-col space-y-3">
-        <a href={new URL('/', Astro.site).pathname} class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'home' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
+        <a href="/" class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'home' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
           Inicio
         </a>
-        <a href={new URL('/projects', Astro.site).pathname} class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'projects' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
+        <a href="/projects/" class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'projects' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
           Proyectos
         </a>
-        <a href={new URL('/cv', Astro.site).pathname} class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'cv' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
+        <a href="/cv/" class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'cv' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
           CV
         </a>
-        <a href={new URL('/certificates', Astro.site).pathname} class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'certificates' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
+        <a href="/certificates/" class={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${activeSection === 'certificates' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}>
           Certificados
         </a>
 
