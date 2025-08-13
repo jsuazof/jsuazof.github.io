@@ -8,10 +8,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/jsuazof.github.io/' : '/',
   integrations: [
     mdx(),
-    tailwind({
-      configFile: false,
-      applyBaseStyles: true
-    }),
+    tailwind(),
     sitemap()
   ],
   output: 'static',
