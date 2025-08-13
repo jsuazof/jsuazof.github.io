@@ -31,6 +31,5 @@
 
     <!-- Texto JSF: centrado debajo del icono -->
     <text x="0" y="15" font-family="Arial, sans-serif" font-size="20" fill="#ffffff" font-weight="600" text-anchor="middle">JSF</text>
-    <text x="0" y="58" font-family="Arial, sans-serif" font-size="13" fill="#888" text-anchor="middle">Diseño simbólico • Minimalista</text>
   </g>
 </svg>
