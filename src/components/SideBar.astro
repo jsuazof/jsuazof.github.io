@@ -54,7 +54,7 @@ const { sideBarActiveItemID } = Astro.props;
     </li>
   </ul>
   <!-- Script para resaltar el ítem activo -->
-  <script>
+  <script is:inline>
     (function () {
       const activeItemID = "home";
       const activeClass = "bg-base-300";
