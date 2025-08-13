@@ -18,15 +18,15 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="elegant-dark">
+<html lang="en" data-theme="dark">
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
-    <div class="bg-base-100 drawer lg:drawer-open">
+    <div class="drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100">
+      <div class="drawer-content">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center">
           <main class="p-4 sm:p-6 pt-10 w-full lg:max-w-[900px] max-w-none">
@@ -37,78 +37,55 @@ const {
       </div>
       {includeSidebar && (
         <div class="drawer-side">
-          <label for="my-drawer" class="drawer-overlay"></label>
+          <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
           <SideBar sideBarActiveItemID={sideBarActiveItemID} />
         </div>
       )}
     </div>
     
-    <!-- Global Theme Toggle Script -->
     <script is:inline>
-      // Global theme toggle functionality
-      function initializeTheme() {
-        // Get current theme from localStorage or default to 'elegant-dark'
-        const currentTheme = localStorage.getItem('theme') || 'elegant-dark';
-        
-        // Set initial theme
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        
-        // Update icon visibility based on current theme
-        function updateIcons(theme) {
-          // Update header icons (mobile)
-          const darkIconHeader = document.getElementById('theme-toggle-dark-icon');
-          const lightIconHeader = document.getElementById('theme-toggle-light-icon');
-          
-          // Update sidebar icons (desktop)
-          const darkIconSidebar = document.getElementById('theme-toggle-dark-icon-sidebar');
-          const lightIconSidebar = document.getElementById('theme-toggle-light-icon-sidebar');
-          
-          if (theme === 'elegant-dark') {
-            // Dark mode: show sun icon (click to go light)
-            if (darkIconHeader) darkIconHeader.classList.add('hidden');
-            if (lightIconHeader) lightIconHeader.classList.remove('hidden');
-            if (darkIconSidebar) darkIconSidebar.classList.add('hidden');
-            if (lightIconSidebar) lightIconSidebar.classList.remove('hidden');
-          } else {
-            // Light mode: show moon icon (click to go dark)
-            if (darkIconHeader) darkIconHeader.classList.remove('hidden');
-            if (lightIconHeader) lightIconHeader.classList.add('hidden');
-            if (darkIconSidebar) darkIconSidebar.classList.remove('hidden');
-            if (lightIconSidebar) lightIconSidebar.classList.add('hidden');
-          }
-        }
-        
-        // Initialize icons
-        updateIcons(currentTheme);
-        
-        // Toggle theme function
-        function toggleTheme() {
-          const currentTheme = document.documentElement.getAttribute('data-theme');
-          const newTheme = currentTheme === 'elegant' ? 'elegant-dark' : 'elegant';
-          
-          document.documentElement.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateIcons(newTheme);
-        }
-        
-        // Add event listeners to both toggle buttons
-        const headerToggle = document.getElementById('theme-toggle');
-        const sidebarToggle = document.getElementById('theme-toggle-sidebar');
-        
-        if (headerToggle) {
-          headerToggle.addEventListener('click', toggleTheme);
-        }
-        
-        if (sidebarToggle) {
-          sidebarToggle.addEventListener('click', toggleTheme);
-        }
+      function initTheme() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        updateIcons(theme);
       }
       
-      // Initialize on page load
-      document.addEventListener('DOMContentLoaded', initializeTheme);
+      function updateIcons(theme) {
+        const isDark = theme === 'dark' || theme === 'elegant-dark';
+        
+        ['', '-sidebar'].forEach(suffix => {
+          const darkIcon = document.getElementById(`theme-toggle-dark-icon${suffix}`);
+          const lightIcon = document.getElementById(`theme-toggle-light-icon${suffix}`);
+          
+          if (darkIcon && lightIcon) {
+            if (isDark) {
+              darkIcon.classList.add('hidden');
+              lightIcon.classList.remove('hidden');
+            } else {
+              darkIcon.classList.remove('hidden');
+              lightIcon.classList.add('hidden');
+            }
+          }
+        });
+      }
       
-      // Re-initialize after navigation (for Astro's client-side routing)
-      document.addEventListener('astro:page-load', initializeTheme);
+      function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        const newTheme = (current === 'dark' || current === 'elegant-dark') ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcons(newTheme);
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        initTheme();
+        
+        ['theme-toggle', 'theme-toggle-sidebar'].forEach(id => {
+          const btn = document.getElementById(id);
+          if (btn) btn.addEventListener('click', toggleTheme);
+        });
+      });
     </script>
   </body>
 </html>

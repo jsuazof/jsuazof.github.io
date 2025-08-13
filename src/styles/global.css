@@ -13,6 +13,48 @@
   }
 }
 
+/* Fix drawer positioning for DaisyUI v5 */
+.drawer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+}
+
+.drawer-content {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 100vh;
+}
+
+.drawer-side {
+  grid-column: 1;
+  grid-row: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 1023px) {
+  .drawer {
+    grid-template-columns: 1fr;
+  }
+  
+  .drawer-content {
+    grid-column: 1;
+  }
+  
+  .drawer-side {
+    position: fixed;
+    left: -100%;
+    transition: left 0.3s ease;
+  }
+  
+  .drawer-toggle:checked ~ .drawer-content .drawer-side {
+    left: 0;
+  }
+}
+
 /* Prevent horizontal scroll on mobile */
 body {
   overflow-x: hidden;
