@@ -9,7 +9,11 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "thumbnails": "node scripts/generate-thumbnails.js",
+    "thumbnails:watch": "node scripts/watch-certificates.js",
+    "certificates:update": "node scripts/update-certificates.js",
+    "certificates:setup": "./scripts/setup-certificates.sh"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.3",

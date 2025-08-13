@@ -1,12 +1,16 @@
 ---
 import ModernLayout from "../layouts/ModernLayout.astro";
 import CertificateSlider from "../components/CertificateSlider.astro";
-// Import certificate images (you'll need to add actual WebP images)
-import awsCloudPractitioner from "../assets/images/certificates/aws-cloud-practitioner.webp";
-import awsTechnicalEssentials from "../assets/images/certificates/aws-technical-essentials.webp";
-import awsIAM from "../assets/images/certificates/aws-iam.webp";
-import awsCompute from "../assets/images/certificates/aws-compute.webp";
-import awsDatabase from "../assets/images/certificates/aws-database.webp";
+
+// Dynamic import function for certificate images
+function getCertificateImage(filename) {
+  try {
+    const baseName = filename.replace('.pdf', '');
+    return import(`../assets/images/certificates/${baseName}.webp`);
+  } catch (error) {
+    return null;
+  }
+}
 
 // AWS Certifications
 const awsCertificates = [
@@ -14,36 +18,31 @@ const awsCertificates = [
     title: "AWS Cloud Practitioner",
     description: "Foundational understanding of AWS Cloud concepts, services, and terminology.",
     provider: "AWS",
-    url: "/certificates/AWS_CloudPractitioner.pdf",
-    image: awsCloudPractitioner
+    url: "/certificates/AWS_CloudPractitioner.pdf"
   },
   {
     title: "AWS Technical Essentials",
     description: "Core AWS services and fundamental cloud computing concepts.",
     provider: "AWS",
-    url: "/certificates/AWS_TechnicalEssentials.pdf",
-    image: awsTechnicalEssentials
+    url: "/certificates/AWS_TechnicalEssentials.pdf"
   },
   {
     title: "AWS Identity and Access Management",
     description: "Security best practices and IAM service fundamentals.",
     provider: "AWS",
-    url: "/certificates/AWS_IdentityAndAccessManagement.pdf",
-    image: awsIAM
+    url: "/certificates/AWS_IdentityAndAccessManagement.pdf"
   },
   {
     title: "AWS Compute Services Overview",
     description: "EC2, Lambda, and other compute services on AWS platform.",
     provider: "AWS",
-    url: "/certificates/AWS_ComputeServicesOverview.pdf",
-    image: awsCompute
+    url: "/certificates/AWS_ComputeServicesOverview.pdf"
   },
   {
     title: "AWS Database Offerings",
     description: "RDS, DynamoDB, and database services on AWS.",
     provider: "AWS",
-    url: "/certificates/AWS_DatabaseOfferings.pdf",
-    image: awsDatabase
+    url: "/certificates/AWS_DatabaseOfferings.pdf"
   }
 ];
 
@@ -226,11 +225,19 @@ const professional = [
 
   <!-- Call to Action -->
   <div class="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-    <h2 class="text-2xl font-bold mb-4">¿Interesado en Colaborar?</h2>
+    <h2 class="text-2xl font-bold mb-4">🚀 ¿Tu empresa necesita un Cloud Architect?</h2>
     <p class="text-blue-100 mb-6 max-w-2xl mx-auto">
-      Estas certificaciones respaldan mi experiencia práctica en arquitectura cloud y desarrollo. 
-      Hablemos sobre cómo puedo contribuir a tu próximo proyecto.
+      Estas certificaciones AWS validan mi experiencia práctica en arquitectura cloud. 
+      Estoy disponible para liderar tu próxima transformación digital con soluciones escalables y seguras.
     </p>
+    <div class="bg-white/10 rounded-lg p-4 mb-6 max-w-xl mx-auto">
+      <p class="text-sm text-blue-100 mb-2">💼 <strong>Modalidades disponibles:</strong></p>
+      <div class="text-sm text-blue-50 space-y-1">
+        <div>• Contrato permanente como Cloud Architect Senior</div>
+        <div>• Consultoría especializada en migración AWS</div>
+        <div>• Liderazgo técnico en proyectos de infraestructura</div>
+      </div>
+    </div>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a 
         href="https://www.linkedin.com/in/jorgesuazof/" 

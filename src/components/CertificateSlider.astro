@@ -1,17 +1,71 @@
 ---
 import { Image } from "astro:assets";
 const { certificates, title, color = "blue" } = Astro.props;
+
+// Try to load certificate images dynamically
+const certificatesWithImages = await Promise.all(
+  certificates.map(async (cert) => {
+    try {
+      const baseName = cert.url.split('/').pop().replace('.pdf', '');
+      const imageModule = await import(`../assets/images/certificates/${baseName}.webp`);
+      return { ...cert, image: imageModule.default };
+    } catch (error) {
+      return cert;
+    }
+  })
+);
+
+// Color mappings for different themes
+const colorClasses = {
+  blue: {
+    title: 'text-blue-600 dark:text-blue-400',
+    bg: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30',
+    icon: 'bg-blue-500',
+    text: 'text-blue-600 dark:text-blue-400',
+    badge: 'bg-blue-500',
+    pill: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+    dot: 'bg-blue-500'
+  },
+  green: {
+    title: 'text-green-600 dark:text-green-400',
+    bg: 'bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30',
+    icon: 'bg-green-500',
+    text: 'text-green-600 dark:text-green-400',
+    badge: 'bg-green-500',
+    pill: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+    dot: 'bg-green-500'
+  },
+  purple: {
+    title: 'text-purple-600 dark:text-purple-400',
+    bg: 'bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30',
+    icon: 'bg-purple-500',
+    text: 'text-purple-600 dark:text-purple-400',
+    badge: 'bg-purple-500',
+    pill: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+    dot: 'bg-purple-500'
+  },
+  amber: {
+    title: 'text-amber-600 dark:text-amber-400',
+    bg: 'bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/30 dark:to-amber-800/30',
+    icon: 'bg-amber-500',
+    text: 'text-amber-600 dark:text-amber-400',
+    badge: 'bg-amber-500',
+    pill: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200',
+    dot: 'bg-amber-500'
+  }
+};
+
+const currentColor = colorClasses[color] || colorClasses.blue;
 ---
 
 <div class="mb-12">
-  <h2 class={`text-2xl font-bold mb-6 text-${color}-600 dark:text-${color}-400`}>{title}</h2>
-  <div class="certificate-slider relative overflow-hidden">
+  <h2 class={`text-2xl font-bold mb-6 ${currentColor.title}`}>{title}</h2>
+  <div class="certificate-slider relative overflow-hidden" data-color={color}>
     <div class="slider-container flex transition-transform duration-500 ease-in-out">
-      {certificates.map((cert, index) => (
+      {certificatesWithImages.map((cert, index) => (
         <div class="certificate-card flex-shrink-0 w-80 mx-3 group">
           <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer" onclick="window.open('${cert.url}', '_blank')">
             <div class="aspect-[4/3] relative overflow-hidden bg-gray-100 dark:bg-gray-800 group-hover:shadow-inner transition-all duration-300">
-              <!-- Certificate Image Preview -->
               {cert.image ? (
                 <Image
                   src={cert.image}
@@ -23,15 +77,14 @@ const { certificates, title, color = "blue" } = Astro.props;
                   loading="lazy"
                 />
               ) : (
-                <!-- Fallback for certificates without images -->
-                <div class={`w-full h-full bg-gradient-to-br from-${color}-50 to-${color}-100 dark:from-${color}-900/30 dark:to-${color}-800/30 flex flex-col items-center justify-center`}>
-                  <div class={`w-16 h-16 bg-${color}-500 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                <div class={`w-full h-full ${currentColor.bg} flex flex-col items-center justify-center`}>
+                  <div class={`w-16 h-16 ${currentColor.icon} rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6z" clip-rule="evenodd"/>
                       <path d="M8 6h4v2H8V6zM8 10h4v2H8v-2z"/>
                     </svg>
                   </div>
-                  <div class={`text-${color}-600 dark:text-${color}-400 font-bold text-sm tracking-wider`}>
+                  <div class={`${currentColor.text} font-bold text-sm tracking-wider`}>
                     {cert.provider}
                   </div>
                 </div>
@@ -44,7 +97,7 @@ const { certificates, title, color = "blue" } = Astro.props;
               <div class="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-medium shadow-md z-10">PDF</div>
               
               <!-- Provider Badge -->
-              <div class={`absolute top-2 left-2 bg-${color}-500 text-white text-xs px-2 py-1 rounded-full font-medium shadow-md z-10`}>
+              <div class={`absolute top-2 left-2 ${currentColor.badge} text-white text-xs px-2 py-1 rounded-full font-medium shadow-md z-10`}>
                 {cert.provider}
               </div>
               
@@ -59,7 +112,7 @@ const { certificates, title, color = "blue" } = Astro.props;
               </h3>
               <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{cert.description}</p>
               <div class="flex items-center justify-between">
-                <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-${color}-100 text-${color}-800 dark:bg-${color}-900 dark:text-${color}-200`}>
+                <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${currentColor.pill}`}>
                   {cert.provider}
                 </span>
                 <a 
@@ -94,8 +147,8 @@ const { certificates, title, color = "blue" } = Astro.props;
     
     <!-- Dots indicator -->
     <div class="flex justify-center mt-6 space-x-2">
-      {certificates.map((_, index) => (
-        <button class={`slider-dot w-2 h-2 rounded-full transition-all duration-200 ${index === 0 ? `bg-${color}-500` : 'bg-gray-300 dark:bg-gray-600'}`} data-index={index}></button>
+      {certificatesWithImages.map((_, index) => (
+        <button class={`slider-dot w-2 h-2 rounded-full transition-all duration-200 ${index === 0 ? currentColor.dot : 'bg-gray-300 dark:bg-gray-600'}`} data-index={index}></button>
       ))}
     </div>
   </div>
@@ -125,9 +178,13 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Update dots
       dots.forEach((dot, index) => {
-        dot.classList.toggle('bg-blue-500', index === currentIndex);
-        dot.classList.toggle('bg-gray-300', index !== currentIndex);
-        dot.classList.toggle('dark:bg-gray-600', index !== currentIndex);
+        if (index === currentIndex) {
+          dot.style.backgroundColor = '#3b82f6'; // blue-500
+          dot.classList.remove('bg-gray-300');
+        } else {
+          dot.style.backgroundColor = '';
+          dot.classList.add('bg-gray-300');
+        }
       });
       
       // Update button visibility
