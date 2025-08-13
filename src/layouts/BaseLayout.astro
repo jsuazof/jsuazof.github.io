@@ -18,91 +18,43 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="dark">
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
     <script is:inline>
       (function() {
-        const theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
+        if (!localStorage.getItem('theme')) {
+          localStorage.setItem('theme', 'dark');
+        }
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
       })();
     </script>
   </head>
-  <body>
-    <div class="drawer lg:drawer-open">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <div class="flex lg:flex-row min-h-screen">
+      <input id="my-drawer" type="checkbox" class="hidden" />
+      {includeSidebar && (
+        <div class="fixed inset-y-0 left-0 z-50 w-80 lg:w-[19rem] transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out lg:static lg:inset-0 min-h-screen">
+          <SideBar sideBarActiveItemID={sideBarActiveItemID} />
+        </div>
+      )}
+      <div class="flex-1 lg:ml-0 flex flex-col min-h-screen">
         <Header title={SITE_TITLE} />
-        <div class="md:flex md:justify-center">
+        <div class="flex-1 md:flex md:justify-center">
           <main class="p-4 sm:p-6 pt-10 w-full lg:max-w-[900px] max-w-none">
             <slot />
           </main>
         </div>
         <Footer />
       </div>
-      {includeSidebar && (
-        <div class="drawer-side">
-          <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-          <SideBar sideBarActiveItemID={sideBarActiveItemID} />
-        </div>
-      )}
     </div>
     
-    <script is:inline>
-      window.themeManager = {
-        init() {
-          const theme = localStorage.getItem('theme') || 'dark';
-          document.documentElement.setAttribute('data-theme', theme);
-          this.updateIcons(theme);
-        },
-        
-        updateIcons(theme) {
-          const isDark = theme === 'dark';
-          
-          ['', '-sidebar'].forEach(suffix => {
-            const darkIcon = document.getElementById(`theme-toggle-dark-icon${suffix}`);
-            const lightIcon = document.getElementById(`theme-toggle-light-icon${suffix}`);
-            
-            if (darkIcon && lightIcon) {
-              if (isDark) {
-                darkIcon.classList.add('hidden');
-                lightIcon.classList.remove('hidden');
-              } else {
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-              }
-            }
-          });
-        },
-        
-        toggle() {
-          const current = document.documentElement.getAttribute('data-theme');
-          const newTheme = current === 'dark' ? 'light' : 'dark';
-          
-          document.documentElement.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          this.updateIcons(newTheme);
-        },
-        
-        bindEvents() {
-          ['theme-toggle', 'theme-toggle-sidebar'].forEach(id => {
-            const btn = document.getElementById(id);
-            if (btn) {
-              btn.removeEventListener('click', this.toggle);
-              btn.addEventListener('click', () => this.toggle());
-            }
-          });
-        }
-      };
-      
-      function initPage() {
-        window.themeManager.init();
-        window.themeManager.bindEvents();
-      }
-      
-      document.addEventListener('DOMContentLoaded', initPage);
-      document.addEventListener('astro:page-load', initPage);
-    </script>
+
   </body>
 </html>

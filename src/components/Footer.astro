@@ -2,14 +2,17 @@
 const today = new Date();
 ---
 
-<footer class="footer footer-center block mb-5 pt-10">
-  <div class="pb-2">
-    &copy; {today.getFullYear()} Jorge Suazo
-  </div>
-  <div class="inline opacity-75">
-    Developed by <a href="https://www.linkedin.com/in/jorgesuazof/" target="_blank" class="font-bold">Jorge Suazo</a> using
-    <!-- Thanks for using this template. You can keep this line to support my work :) -->
-    <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>
+<footer class="mt-auto py-8 border-t border-gray-200 dark:border-gray-700">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <div class="mb-4">
+      <p class="text-gray-900 dark:text-gray-100 font-medium">
+        &copy; {today.getFullYear()} Jorge Suazo
+      </p>
+    </div>
+    <div class="text-sm text-gray-600 dark:text-gray-400">
+      Developed by <a href="https://www.linkedin.com/in/jorgesuazof/" target="_blank" class="font-semibold text-primary-500 hover:text-primary-600 transition-colors">Jorge Suazo</a> using
+      <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-semibold text-primary-500 hover:text-primary-600 transition-colors">Astrofy Template ⚡️</a>
+    </div>
   </div>
 </footer>
 <style></style>

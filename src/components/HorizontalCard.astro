@@ -4,34 +4,43 @@ import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
-<div
-  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
->
-  <a href={url} target={target}>
-    <div class="hero-content flex-col md:flex-row">
+<div class="group bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700 overflow-hidden">
+  <a href={url} target={target} class="block">
+    <div class="flex flex-col md:flex-row">
       {
         img && (
-          <Image
-            src={img}
-            width={750}
-            height={422}
-            format="webp"
-            alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
-          />
+          <div class="md:w-48 flex-shrink-0">
+            <Image
+              src={img}
+              width={750}
+              height={422}
+              format="webp"
+              alt={title}
+              class="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
         )
       }
-      <div class="grow w-full">
-        <h1 class="text-xl font-bold">
-          {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
-        </h1>
-        <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
+      <div class="flex-1 p-6">
+        <div class="flex items-start justify-between mb-3">
+          <h1 class="text-xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-primary-500 transition-colors">
+            {title}
+          </h1>
+          {badge && (
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">
+              {badge}
+            </span>
+          )}
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{desc}</p>
+        <div class="flex flex-wrap gap-2">
           {
             tags &&
               tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                <a 
+                  href={`${tag_url}/${tag}`} 
+                  class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-primary-100 hover:text-primary-800 dark:hover:bg-primary-900 dark:hover:text-primary-200 transition-colors"
+                >
                   {tag}
                 </a>
               ))

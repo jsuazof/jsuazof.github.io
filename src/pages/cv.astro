@@ -5,20 +5,32 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 
 <BaseLayout title="Curriculum" sideBarActiveItemID="cv">
   <!-- Perfil Profesional -->
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Perfil Profesional</div>
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Perfil Profesional
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h1>
   </div>
-  <div class="mb-10 text-justify">
-    <strong>Cloud Architect</strong> y FullStack Developer con más de 30 años
+  <div class="mb-12 text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
+    <span class="text-primary-600 dark:text-primary-400 font-semibold">Cloud Architect</span> y FullStack Developer con más de 30 años
     de experiencia en TI, combinando una sólida formación en infraestructura y redes
     con habilidades modernas en desarrollo web, DevOps y arquitectura en la nube.
-    Especializado en soluciones escalables con <strong
-      >AWS, Google Cloud, Java, Spring y Astro</strong
+    Especializado en soluciones escalables con <span class="text-primary-600 dark:text-primary-400 font-semibold"
+      >AWS, Google Cloud, Java, Spring y Astro</span
     >. Apasionado por la innovación, la automatización y el diseño de sistemas
     resilientes.
   </div>
   <!-- Educación -->
-  <div class="mb-5"><div class="text-3xl w-full font-bold">Educación</div></div>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Educación
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
+  </div>
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
       title="Ingeniería en Informática"
@@ -30,8 +42,15 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     />
   </div>
   <!-- Bootcamps -->
-  <div class="mb-5"><div class="text-3xl w-full font-bold">Bootcamps</div></div>
-  <div class="time-line-container grid gap-4 mb-10">
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Bootcamps
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
+  </div>
+  <div class="time-line-container grid gap-4 mb-12">
     <TimeLineElement
       title="FullStack Java Developer"
       subtitle="Talento Digital, 2021"
@@ -47,10 +66,15 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     </TimeLineElement>
   </div>
   <!-- Experiencia Laboral -->
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experiencia Laboral</div>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Experiencia Laboral
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
   </div>
-  <div class="time-line-container mb-10">
+  <div class="time-line-container mb-12">
     <TimeLineElement
       title="Cloud Architect & Network Engineer"
       subtitle="Artifices.tv, Santiago, Chile | 2021 - Presente"
@@ -77,72 +101,122 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     </TimeLineElement>
   </div>
   <!-- Certificaciones -->
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certificaciones</div>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Certificaciones
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
   </div>
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="https://www.oracle.com/cloud/certification/" target="_blank"
+  <ul class="space-y-3 mb-12">
+    <li class="flex items-center">
+      <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
+      <a href="https://www.oracle.com/cloud/certification/" target="_blank" 
+         class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
         >Oracle Cloud Infrastructure Certified</a
       >
     </li>
-    <li>
+    <li class="flex items-center">
+      <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
       <a href="https://university.redislabs.com/" target="_blank"
+         class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
         >Redis for Java Developers</a
       >
     </li>
-    <li>
+    <li class="flex items-center">
+      <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
       <a href="https://www.atlassian.com/certification/" target="_blank"
+         class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
         >Jira Fundamentals</a
       >
     </li>
-    <li>
+    <li class="flex items-center">
+      <span class="w-2 h-2 bg-primary-500 rounded-full mr-3"></span>
       <a href="https://www.atlassian.com/certification/" target="_blank"
+         class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
         >Confluence Fundamentals</a
       >
     </li>
   </ul>
   <!-- Habilidades Técnicas -->
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Habilidades</div>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Habilidades
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
   </div>
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>Tailwind CSS</li>
-    <li>Java</li>
-    <li>Spring Boot</li>
-    <li>MySQL</li>
-    <li>Git / GitHub</li>
-    <li>Next.js</li>
-    <li>Astro</li>
-    <li>Amazon Web Services (AWS)</li>
-    <li>Google Cloud Platform (GCP)</li>
-    <li>Oracle Cloud</li>
-    <li>DevOps</li>
-    <li>Redes & Seguridad</li>
-    <li>Linux / SysAdmin</li>
-    <li>VS Code</li>
-    <li>Docker (Fundamentos)</li>
-    <li>Automatización</li>
-    <li>Arquitectura de Soluciones</li>
-  </ul>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-12">
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">HTML</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">CSS</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">JavaScript</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Tailwind CSS</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Java</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Spring Boot</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">MySQL</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Git / GitHub</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Next.js</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Astro</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">AWS</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Google Cloud</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Oracle Cloud</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">DevOps</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Redes & Seguridad</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Linux / SysAdmin</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">VS Code</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Docker</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Automatización</span>
+    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200">Arquitectura</span>
+  </div>
   <!-- Idiomas -->
-  <div class="mb-5 mt-10">
-    <div class="text-3xl w-full font-bold">Idiomas</div>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Idiomas
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
   </div>
-  <ul class="list-disc mx-6">
-    <li>Español - Nativo</li>
-    <li>Inglés - Profesional (B2)</li>
-  </ul>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+    <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <span class="w-3 h-3 bg-green-500 rounded-full mr-3"></span>
+      <div>
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Español</span>
+        <span class="text-gray-600 dark:text-gray-400 ml-2">- Nativo</span>
+      </div>
+    </div>
+    <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <span class="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+      <div>
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Inglés</span>
+        <span class="text-gray-600 dark:text-gray-400 ml-2">- Profesional (B2)</span>
+      </div>
+    </div>
+  </div>
+  
   <!-- Intereses -->
-  <div class="mb-5 mt-10">
-    <div class="text-3xl w-full font-bold">Intereses</div>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
+      <span class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent">
+        Intereses
+      </span>
+      <div class="flex-1 h-px bg-gradient-to-r from-primary-200 to-transparent ml-4"></div>
+    </h2>
   </div>
-  <ul class="list-disc mx-6">
-    <li>Música: Tocar guitarra y bajo, asistir a conciertos</li>
-    <li>Cine, teatro y cultura</li>
-    <li>Naturaleza, huertos y sostenibilidad</li>
-  </ul>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <span class="text-2xl mr-3">🎸</span>
+      <span class="text-gray-700 dark:text-gray-300">Música: Guitarra y bajo</span>
+    </div>
+    <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <span class="text-2xl mr-3">🎭</span>
+      <span class="text-gray-700 dark:text-gray-300">Cine, teatro y cultura</span>
+    </div>
+    <div class="flex items-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <span class="text-2xl mr-3">🌱</span>
+      <span class="text-gray-700 dark:text-gray-300">Naturaleza y sostenibilidad</span>
+    </div>
+  </div>
 </BaseLayout>
