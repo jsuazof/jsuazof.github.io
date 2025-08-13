@@ -612,7 +612,67 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   
   /* Formato profesional simple */
   .leading-relaxed {
-    line-height: 1.2 !important;
+    line-height: 1.1 !important;
+  }
+  
+  /* Ultra compacto - máxima densidad */
+  body {
+    font-size: 9px !important;
+    line-height: 1.0 !important;
+    margin: 0.25in !important;
+  }
+  
+  /* Títulos más pequeños */
+  .text-4xl, .text-5xl {
+    font-size: 14px !important;
+    margin: 0 0 0.1rem 0 !important;
+  }
+  
+  .text-3xl {
+    font-size: 11px !important;
+    margin: 0.15rem 0 0.05rem 0 !important;
+  }
+  
+  .text-xl, .text-2xl {
+    font-size: 10px !important;
+    margin: 0 !important;
+  }
+  
+  /* Espaciado mínimo */
+  .mb-12, .mb-6, .mb-4, .mb-3, .mb-2 {
+    margin-bottom: 0.1rem !important;
+  }
+  
+  /* Habilidades en línea continua */
+  .inline-flex.items-center::after {
+    content: ", ";
+  }
+  
+  .inline-flex.items-center:last-child::after {
+    content: ".";
+  }
+  
+  /* Timeline compacto */
+  .flex.mb-8 {
+    margin-bottom: 0.05rem !important;
+  }
+  
+  /* Párrafos sin espacios */
+  p {
+    margin: 0.05rem 0 !important;
+    font-size: 9px !important;
+  }
+  
+  /* Listas ultra compactas */
+  ul {
+    margin: 0.05rem 0 !important;
+    padding-left: 0.8rem !important;
+  }
+  
+  li {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 9px !important;
   }
 }
 </style>
