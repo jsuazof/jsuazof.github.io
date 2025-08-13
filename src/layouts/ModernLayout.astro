@@ -1,0 +1,48 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import ModernHeader from "../components/ModernHeader.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
+
+const {
+  image,
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  activeSection,
+  ogType,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <BaseHead title={title} description={description} image={image} , ogType={ogType} />
+    {TRANSITION_API && <ViewTransitions />}
+    <script is:inline>
+      (function() {
+        if (!localStorage.getItem('theme')) {
+          localStorage.setItem('theme', 'dark');
+        }
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <ModernHeader activeSection={activeSection} />
+    
+    <main class="min-h-screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <slot />
+      </div>
+    </main>
+    
+    <Footer />
+  </body>
+</html>

@@ -2,16 +2,16 @@
 const { title, subtitle } = Astro.props;
 ---
 
-<div class="flex">
-  <div class="education__time">
-    <span class="w-4 h-4 bg-primary block rounded-full mt-1"></span>
-    <span class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"></span>
+<div class="flex mb-8">
+  <div class="flex flex-col items-center mr-6">
+    <div class="w-4 h-4 bg-blue-500 rounded-full border-2 border-white dark:border-gray-900 shadow-md"></div>
+    <div class="w-0.5 h-full bg-blue-300 dark:bg-blue-600 mt-2"></div>
   </div>
-  <div class="experience__data bd-grid px-5">
-    <h3 class="font-semibold mb-1">{title}</h3>
-    <span class="font-light text-sm">{subtitle}</span>
-    <p class="my-2 text-justify">
+  <div class="flex-1">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1">{title}</h3>
+    <p class="text-blue-600 dark:text-blue-400 text-sm font-medium mb-3">{subtitle}</p>
+    <div class="text-gray-700 dark:text-gray-300 leading-relaxed">
       <slot />
-    </p>
+    </div>
   </div>
 </div>

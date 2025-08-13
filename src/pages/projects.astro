@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import ModernLayout from "../layouts/ModernLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import sqlInteractiveImg from "../assets/images/projects/sqlinteractivo.webp";
 import entrevistasImg from "../assets/images/projects/entrevistastecnicas.webp";
@@ -7,7 +7,7 @@ import portfolioImg from "../assets/images/itemPreview.webp";
 import placeholderImg from "../assets/images/post_img.webp";
 ---
 
-<BaseLayout title="Proyectos" sideBarActiveItemID="projects">
+<ModernLayout title="Proyectos" activeSection="projects">
   <!-- Sección: Proyectos Personales -->
   <div class="text-3xl w-full font-bold mb-5">Proyectos Personales</div>
   <HorizontalCard
@@ -18,7 +18,7 @@ import placeholderImg from "../assets/images/post_img.webp";
     target="_blank"
     badge="FullStack"
   />
-  <div class="divider my-0"></div>
+  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <HorizontalCard
     title="Entrevistas Técnicas"
     img={entrevistasImg}
@@ -27,7 +27,7 @@ import placeholderImg from "../assets/images/post_img.webp";
     target="_blank"
     badge="Open Source"
   />
-  <div class="divider my-0"></div>
+  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <HorizontalCard
     title="Portafolio Jorge Suazo"
     img={portfolioImg}
@@ -36,7 +36,7 @@ import placeholderImg from "../assets/images/post_img.webp";
     target="_blank"
     badge="Astro"
   />
-  <div class="divider my-0"></div>
+  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <!-- Sección: Herramientas y Aprendizaje -->
   <div class="text-3xl w-full font-bold mb-5 mt-10">
     Herramientas & Aprendizaje
@@ -49,7 +49,7 @@ import placeholderImg from "../assets/images/post_img.webp";
     target="_blank"
     badge="Java"
   />
-  <div class="divider my-0"></div>
+  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <HorizontalCard
     title="Cloud Architecture Playground"
     img={placeholderImg}
@@ -58,7 +58,7 @@ import placeholderImg from "../assets/images/post_img.webp";
     target="_blank"
     badge="Cloud"
   />
-  <div class="divider my-0"></div>
+  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <HorizontalCard
     title="DevOps Basics"
     img={placeholderImg}
@@ -67,4 +67,4 @@ import placeholderImg from "../assets/images/post_img.webp";
     target="_blank"
     badge="DevOps"
   />
-</BaseLayout>
+</ModernLayout>

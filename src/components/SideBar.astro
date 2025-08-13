@@ -18,7 +18,7 @@ const { sideBarActiveItemID } = Astro.props;
           <Image
             src={profileImg}
             alt="Jorge Suazo - Cloud Architect & FullStack Developer"
-            class="mask mask-circle"
+            class="rounded-full"
             width="300"
             height="300"
           />
@@ -107,7 +107,7 @@ const { sideBarActiveItemID } = Astro.props;
       
       // Active menu item
       const activeItemID = "home";
-      const activeClass = "bg-base-300";
+      const activeClass = "bg-gray-200 dark:bg-gray-600";
       const link = document.querySelector(`[href="/${activeItemID}"]`);
       if (link && link.parentElement) {
         link.parentElement.classList.add(activeClass);
