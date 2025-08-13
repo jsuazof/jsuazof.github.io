@@ -2,84 +2,61 @@
 
 ![Jorge Suazo Portfolio](src/assets/images/profile.webp)
 
-A comprehensive personal portfolio website showcasing expertise in cloud architecture, DevOps practices, and full-stack development. Built with modern web technologies and designed for professional presentation.
+[🇬🇧 English](README.en.md) | [🇪🇸 Español](README.md)
 
-## 🌟 Current Studies
 
-Currently enrolled in **Talento Digital** program, focusing on **Cloud Architect Fundamentals** with **AWS** as the primary cloud platform. This program provides comprehensive training in:
+Un portafolio personal completo que muestra experiencia en arquitectura de la nube, prácticas DevOps y desarrollo full-stack. Construido con tecnologías web modernas y diseñado para una presentación profesional.
 
-- Cloud infrastructure design and implementation
-- AWS services and best practices
-- DevOps methodologies and automation
-- Scalable architecture patterns
-- Security and compliance in cloud environments
+## 🌟 Estudios Actuales
 
-## 🚀 Enhanced Portfolio Website Features
+Actualmente inscrito en el programa **Talento Digital**, enfocado en **Fundamentos de Arquitecto Cloud** con **AWS** como plataforma principal. Este programa incluye formación en:
 
-### Professional Sections
-- **Home**: Professional introduction and skills overview
-- **Projects**: Showcase of real-world implementations and solutions
-- **Services**: Detailed service offerings in cloud and development
-- **CV**: Comprehensive professional experience and technical skills
-- **Certificates**: Professional certifications and training achievements
-- **Blog**: Technical articles and industry insights
-- **Store**: Digital products and consulting services
+- Diseño e implementación de infraestructura en la nube
+- Servicios de AWS y mejores prácticas
+- Metodologías DevOps y automatización
+- Patrones de arquitectura escalable
+- Seguridad y cumplimiento en entornos cloud
 
-### Technical Capabilities
-- **Cloud Platforms**: AWS, Google Cloud Platform, Oracle Cloud Infrastructure
-- **DevOps Tools**: Docker, Kubernetes, Terraform, CloudFormation, CI/CD pipelines
-- **Programming**: Java, Spring Framework, JavaScript, React, Vue.js, Next.js
-- **Databases**: MySQL, Redis, and cloud-native database solutions
-- **Infrastructure**: Microservices, serverless architectures, container orchestration
+## 🚀 Secciones del Portafolio
 
-## 🎯 Live Demo
+### Secciones Profesionales
+- **Inicio**: Presentación profesional y resumen de habilidades
+- **Proyectos**: Implementaciones reales y soluciones
+- **CV**: Experiencia profesional y habilidades técnicas
+- **Certificados**: Certificaciones y logros de formación
 
-- **Portfolio Website**: [https://jsuazof.github.io](https://jsuazof.github.io)
-- **LinkedIn Profile**: [https://www.linkedin.com/in/jorgesuazof](https://www.linkedin.com/in/jorgesuazof)
-- **GitHub Profile**: [https://github.com/jsuazof](https://github.com/jsuazof)
+### Capacidades Técnicas
+- **Plataformas Cloud**: AWS, Google Cloud Platform, Oracle Cloud Infrastructure
+- **Herramientas DevOps**: Docker, Kubernetes, Terraform, CloudFormation, CI/CD
+- **Programación**: Java, Spring, JavaScript, React, Vue.js, Next.js
+- **Bases de Datos**: MySQL, Redis, soluciones nativas en la nube
+- **Infraestructura**: Microservicios, arquitecturas serverless, orquestación de contenedores
 
-## 🛠️ Built With
+## 🎯 Demo en Vivo
+- **Sitio Web**: [https://jsuazof.github.io](https://jsuazof.github.io)
+- **LinkedIn**: [https://www.linkedin.com/in/jorgesuazof](https://www.linkedin.com/in/jorgesuazof)
+- **GitHub**: [https://github.com/jsuazof](https://github.com/jsuazof)
 
-- **[Astro](https://astro.build)** - Static site generator for modern web development
-- **[TailwindCSS](https://tailwindcss.com/)** - Utility-first CSS framework for rapid UI development
-- **[DaisyUI](https://daisyui.com/)** - Component library built on TailwindCSS for beautiful, accessible components
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript for robust development
-- **[GitHub Pages](https://pages.github.com/)** - Static site hosting with automatic deployment
-- **[GitHub Actions](https://github.com/features/actions)** - CI/CD automation for seamless deployments
+## 🛠️ Construido con
+- **Astro** - Generador de sitios estáticos moderno
+- **TailwindCSS** - Framework CSS utility-first
+- **DaisyUI** - Librería de componentes accesibles sobre TailwindCSS
+- **TypeScript** - JavaScript tipado
+- **GitHub Pages** - Hosting estático con despliegue automático
+- **GitHub Actions** - CI/CD para despliegue sin interrupciones
 
-## 📁 Project Structure
+## 🌐 Despliegue
+Este portafolio se despliega automáticamente en GitHub Pages usando GitHub Actions.
 
-```
-├── src/
-│   ├── components/          # Reusable UI components
-│   ├── content/            # Blog posts and store items
-│   ├── layouts/            # Page layout templates
-│   ├── pages/              # Astro page components
-│   ├── styles/             # Global CSS and Tailwind config
-│   └── config.ts           # Site configuration and content schemas
-├── public/                 # Static assets and certificates
-├── .github/workflows/      # GitHub Actions deployment
-└── astro.config.mjs       # Astro configuration
-```
+1. **Build**: Compilación y optimización con Astro  
+2. **Validación**: Pruebas y chequeos de calidad  
+3. **Despliegue**: Publicación con cero tiempo de inactividad
 
-## 🌐 Deployment
-
-This portfolio is automatically deployed to GitHub Pages using GitHub Actions. Every push to the main branch triggers:
-
-1. **Build Process**: Astro site compilation and optimization
-2. **Quality Checks**: Build validation and testing
-3. **Automatic Deployment**: Deployment to GitHub Pages with zero downtime
-
-## 📧 Contact & Collaboration
-
+## 📧 Contacto
 - **Email**: jsuazof@gmail.com
 - **LinkedIn**: [Jorge Suazo](https://www.linkedin.com/in/jorgesuazof)
 - **GitHub**: [jsuazof](https://github.com/jsuazof)
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ---
 
-*Professional portfolio showcasing 30+ years of IT experience, specializing in cloud architecture, DevOps practices, and full-stack development. Committed to delivering scalable, secure, and innovative solutions for modern enterprises.*
+*Portafolio profesional con más de 30 años de experiencia en TI, especializado en arquitectura cloud, DevOps y desarrollo full-stack.*
