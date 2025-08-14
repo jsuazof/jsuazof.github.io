@@ -13,21 +13,20 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       Cloud Architect & FullStack Developer
     </h2>
     <p class="text-gray-600 dark:text-gray-400 mb-4">
-      Santiago, Chile | 30+ años de experiencia en TI
+      Santiago, Chile | 30+ años de experiencia en TI | Estudiante de Arquitectura Cloud AWS
     </p>
     
-    <!-- Download CV Button -->
-    <div class="flex justify-center">
-      <a 
-        href="/cv/Jorge_Suazo_CV.pdf" 
-        target="_blank"
-        class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-      >
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+    <!-- Access Notice -->
+    <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg p-4 max-w-2xl mx-auto">
+      <div class="flex items-center">
+        <svg class="w-5 h-5 text-amber-600 dark:text-amber-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
         </svg>
-        Descargar CV (PDF)
-      </a>
+        <p class="text-amber-800 dark:text-amber-200 text-sm font-medium">
+          📧 Para acceder al CV completo en PDF, contáctame en: 
+          <a href="mailto:jsuazof@gmail.com" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">jsuazof@gmail.com</a>
+        </p>
+      </div>
     </div>
   </div>
   
@@ -35,17 +34,17 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   <div class="cv-section mb-6">
     <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
       <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-        Sobre mí
+        Perfil Profesional
       </span>
       <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent ml-4"></div>
     </h1>
   </div>
   <div class="cv-section mb-12 text-justify text-gray-700 dark:text-gray-300 leading-relaxed">
-    <span class="text-blue-600 dark:text-blue-400 font-semibold">Cloud Architect</span> con más de 30 años de experiencia en TI, especializado en 
-    <span class="text-blue-600 dark:text-blue-400 font-semibold">AWS, Google Cloud y Oracle Cloud</span>. 
-    Experto en diseño de infraestructuras escalables, migración a la nube y automatización de procesos. 
-    He trabajado en diversos sectores como Minería, Ingeniería y Streaming, liderando proyectos de transformación digital 
-    y arquitecturas cloud híbridas. Complemento mi experiencia en infraestructura con habilidades en desarrollo FullStack.
+    <span class="text-blue-600 dark:text-blue-400 font-semibold">Cloud Architect & FullStack Developer</span> con más de 30 años de experiencia en TI. 
+    Actualmente estudiando <span class="text-blue-600 dark:text-blue-400 font-semibold">Fundamentos de Arquitecto Cloud con AWS</span> en el programa Talento Digital. 
+    Especializado en diseño de infraestructuras escalables, migración a la nube, desarrollo web moderno y automatización de procesos. 
+    Experiencia comprobada en sectores como Minería, Ingeniería y Streaming, liderando proyectos de transformación digital 
+    con tecnologías como <span class="text-blue-600 dark:text-blue-400 font-semibold">Java, Spring Boot, React, Vue.js y Next.js</span>.
   </div>
   
   <!-- Experiencia Laboral -->
@@ -109,16 +108,24 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       subtitle="Inacap | 1992 - 1994"
     />
   </div>
-  <!-- Bootcamps -->
+  <!-- Formación Técnica -->
   <div class="cv-section mb-6">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
       <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-        Bootcamps
+        Formación Técnica
       </span>
       <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent ml-4"></div>
     </h2>
   </div>
   <div class="cv-section mb-12">
+    <TimeLineElement
+      title="Fundamentos de Arquitecto Cloud (AWS)"
+      subtitle="Talento Digital | 2024 - En curso"
+    >
+      Programa especializado en arquitectura cloud con AWS como plataforma principal. 
+      Incluye diseño de infraestructura, servicios AWS, metodologías DevOps, 
+      patrones de arquitectura escalable y seguridad en entornos cloud.
+    </TimeLineElement>
     <TimeLineElement
       title="Desarrollador FullStack Java"
       subtitle="Talento Digital | Febrero 2024 - Julio 2024"
@@ -178,34 +185,51 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
       >
     </li>
   </ul>
-  <!-- Habilidades Técnicas -->
+  <!-- Competencias Técnicas -->
   <div class="cv-section mb-6">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 flex items-center">
       <span class="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-        Habilidades
+        Competencias Técnicas
       </span>
       <div class="flex-1 h-px bg-gradient-to-r from-blue-200 to-transparent ml-4"></div>
     </h2>
   </div>
-  <div class="cv-section grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-12">
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 font-semibold">AWS</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 font-semibold">Google Cloud</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 font-semibold">Oracle Cloud</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 font-semibold">Cloud Architecture</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">DevOps</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Docker</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Linux / SysAdmin</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Redes & Seguridad</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Automatización</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">Java</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">Spring Boot</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">MySQL</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">Next.js</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">HTML</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">CSS</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">JavaScript</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">Git / GitHub</span>
-    <span class="inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">Astro</span>
+  <div class="cv-section mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="font-semibold text-blue-600 dark:text-blue-400 mb-3">☁️ Cloud & Infraestructura</h3>
+        <div class="space-y-1 text-sm">
+          <div>• AWS (EC2, S3, RDS, Lambda, VPC)</div>
+          <div>• Google Cloud Platform</div>
+          <div>• Oracle Cloud Infrastructure</div>
+          <div>• Docker & Kubernetes</div>
+          <div>• Terraform & CloudFormation</div>
+          <div>• Linux Administration</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-semibold text-green-600 dark:text-green-400 mb-3">💻 Desarrollo FullStack</h3>
+        <div class="space-y-1 text-sm">
+          <div>• Java & Spring Boot</div>
+          <div>• JavaScript & TypeScript</div>
+          <div>• React & Vue.js</div>
+          <div>• Next.js & Astro</div>
+          <div>• MySQL & Redis</div>
+          <div>• RESTful APIs</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-semibold text-purple-600 dark:text-purple-400 mb-3">🔧 DevOps & Herramientas</h3>
+        <div class="space-y-1 text-sm">
+          <div>• CI/CD Pipelines</div>
+          <div>• Git & GitHub Actions</div>
+          <div>• Monitoring & Logging</div>
+          <div>• Network Security</div>
+          <div>• Backup & Recovery</div>
+          <div>• Automation Scripts</div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Idiomas -->
   <div class="cv-section mb-6">
@@ -259,6 +283,13 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 </ModernLayout>
 
 <style>
+/* Ocultar aviso de acceso en impresión */
+@media print {
+  .bg-amber-50,
+  .dark\:bg-amber-900\/20 {
+    display: none !important;
+  }
+  
 @media print {
   /* Ocultar elementos innecesarios para ATS */
   header,
