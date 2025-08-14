@@ -1,16 +1,22 @@
 --- 
 title: "Entrevistas Técnicas" 
-description: "Plataforma con preguntas y ejercicios comunes en entrevistas técnicas de desarrollo. Enfocada en lógica, SQL y buenas prácticas." 
-custom_link_label: "Ver en GitHub" 
-custom_link: "https://github.com/jsuazof/entrevistas-tecnicas" 
+description: "Plataforma interna con preguntas y ejercicios comunes en entrevistas técnicas de desarrollo. Enfocada en lógica, SQL y buenas prácticas." 
+custom_link_label: "" 
+custom_link: "" 
 updatedDate: "2025-08-10" 
-pricing: "Gratis" 
+pricing: "Uso Privado" 
 oldPricing: "" 
-badge: "Open Source" 
-checkoutUrl: "https://github.com/jsuazof/entrevistas-tecnicas" 
+badge: "Intranet" 
+checkoutUrl: "" 
 heroImage: "../../assets/images/projects/entrevistastecnicas.webp" 
 --- 
 
-Proyecto educativo diseñado para ayudar a desarrolladores a prepararse para entrevistas técnicas. Incluye ejercicios prácticos de lógica, consultas SQL, algoritmos básicos y buenas prácticas de programación. 
+Plataforma educativa desarrollada para uso interno corporativo, diseñada para ayudar a desarrolladores a prepararse para entrevistas técnicas. Incluye ejercicios prácticos de lógica, consultas SQL, algoritmos básicos y buenas prácticas de programación.
 
-Ideal para quienes están en proceso de búsqueda de empleo o quieren reforzar sus conocimientos técnicos antes de una evaluación.
+**Nota:** Este proyecto fue desarrollado específicamente para uso en intranet corporativa y no está disponible públicamente.
+
+Características implementadas:
+- Sistema de autenticación interno
+- Ejercicios progresivos categorizados
+- Interfaz responsive y accesible
+- Panel de administración para gestión de contenido

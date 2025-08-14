@@ -1,10 +1,13 @@
 ---
 import ModernLayout from "../layouts/ModernLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
 import sqlInteractiveImg from "../assets/images/projects/sqlinteractivo.webp";
 import entrevistasImg from "../assets/images/projects/entrevistastecnicas.webp";
 import portfolioImg from "../assets/images/itemPreview.webp";
 import placeholderImg from "../assets/images/post_img.webp";
+
+const storeItems = (await getCollection("store")).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <ModernLayout title="Proyectos" activeSection="projects">
@@ -14,57 +17,46 @@ import placeholderImg from "../assets/images/post_img.webp";
     title="SQL Interactivo"
     img={sqlInteractiveImg}
     desc="Sitio web educativo para aprender y practicar consultas SQL con ejemplos interactivos. Ideal para preparar entrevistas técnicas."
-    url="https://github.com/jsuazof/sql-interactive"
+    url="https://sqlinteractivo.desafiolatam.com/"
     target="_blank"
-    badge="FullStack"
+    badge="Educativo"
   />
   <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <HorizontalCard
     title="Entrevistas Técnicas"
     img={entrevistasImg}
-    desc="Plataforma con preguntas y ejercicios comunes en entrevistas técnicas de desarrollo. Enfocada en lógica, SQL y buenas prácticas."
-    url="https://github.com/jsuazof/entrevistas-tecnicas"
-    target="_blank"
-    badge="Open Source"
+    desc="Plataforma para RRHH en Desafío Latam con preguntas y ejercicios comunes en entrevistas técnicas de desarrollo."
+    url=""
+    target="_self"
+    badge="Intranet"
   />
   <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <HorizontalCard
-    title="Portafolio Jorge Suazo"
+    title="Proyecto ABP - AWS"
     img={portfolioImg}
-    desc="Este portafolio personal, desarrollado con Astro, TailwindCSS y daisyUI. Diseño limpio, responsive y con soporte para CV, blog y proyectos."
-    url="https://github.com/jsuazof/jorgesuazocv"
+    desc="Marco teórico de Aprendizaje Basado en Problemas desarrollado durante el curso de AWS. Documentación de soluciones cloud escalables y arquitecturas distribuidas."
+    url="https://github.com/jsuazof/Proyecto-ABP"
     target="_blank"
-    badge="Astro"
+    badge="AWS"
   />
   <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
   <!-- Sección: Herramientas y Aprendizaje -->
   <div class="text-3xl w-full font-bold mb-5 mt-10">
     Herramientas & Aprendizaje
   </div>
-  <HorizontalCard
-    title="Notas de Estudio: Java & Spring"
-    img={placeholderImg}
-    desc="Apuntes y ejemplos prácticos sobre Java, Spring Boot, JPA y Hibernate. Recursos útiles para reforzar conocimientos backend."
-    url="https://github.com/jsuazof/java-spring-notes"
-    target="_blank"
-    badge="Java"
-  />
-  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
-  <HorizontalCard
-    title="Cloud Architecture Playground"
-    img={placeholderImg}
-    desc="Proyectos de experimentación con AWS, Google Cloud y Oracle Cloud. Automatización, despliegue de APIs y gestión de recursos en la nube."
-    url="https://github.com/jsuazof/cloud-playground"
-    target="_blank"
-    badge="Cloud"
-  />
-  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
-  <HorizontalCard
-    title="DevOps Basics"
-    img={placeholderImg}
-    desc="Configuraciones iniciales con GitHub Actions, CI/CD básico y buenas prácticas para despliegue automatizado de aplicaciones estáticas."
-    url="https://github.com/jsuazof/devops-basics"
-    target="_blank"
-    badge="DevOps"
-  />
+  {storeItems.slice(3).map((item, index) => (
+    <>
+      <HorizontalCard
+        title={item.data.title}
+        img={item.data.heroImage || placeholderImg}
+        desc={item.data.description}
+        url={item.data.custom_link || item.data.checkoutUrl || ""}
+        target="_blank"
+        badge={item.data.badge}
+      />
+      {index < storeItems.slice(3).length - 1 && (
+        <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
+      )}
+    </>
+  ))}
 </ModernLayout>
