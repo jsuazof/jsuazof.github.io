@@ -40,23 +40,5 @@ const storeItems = (await getCollection("store")).sort((a, b) => a.data.title.lo
     badge="AWS"
   />
   <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
-  <!-- Sección: Herramientas y Aprendizaje -->
-  <div class="text-3xl w-full font-bold mb-5 mt-10">
-    Herramientas & Aprendizaje
-  </div>
-  {storeItems.slice(3).map((item, index) => (
-    <>
-      <HorizontalCard
-        title={item.data.title}
-        img={item.data.heroImage || placeholderImg}
-        desc={item.data.description}
-        url={item.data.custom_link || item.data.checkoutUrl || ""}
-        target="_blank"
-        badge={item.data.badge}
-      />
-      {index < storeItems.slice(3).length - 1 && (
-        <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
-      )}
-    </>
-  ))}
+
 </ModernLayout>
