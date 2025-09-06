@@ -65,7 +65,7 @@ const currentColor = colorClasses[color] || colorClasses.blue;
     <div class="slider-container flex transition-transform duration-500 ease-in-out">
       {certificatesWithImages.map((cert, index) => (
         <div class="certificate-card flex-shrink-0 w-80 mx-3 group">
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer" onclick="window.open('${cert.url}', '_blank')">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer" onclick={`window.open('${cert.url}', '_blank')`}>
             <div class="aspect-[4/3] relative overflow-hidden bg-gray-100 dark:bg-gray-800 group-hover:shadow-inner transition-all duration-300">
               {cert.image ? (
                 <Image
