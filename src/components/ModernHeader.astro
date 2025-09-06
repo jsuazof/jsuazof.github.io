@@ -86,7 +86,7 @@ const { activeSection } = Astro.props;
   </div>
 </header>
 
-<script is:inline>
+<script>
 // Theme toggle functionality
 function initTheme() {
   const theme = localStorage.getItem('theme') || 'dark';
@@ -113,10 +113,13 @@ function initTheme() {
     updateTheme(theme);
   }
   
-  document.getElementById('theme-toggle')?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    updateTheme(isDark ? 'light' : 'dark');
-  });
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      updateTheme(isDark ? 'light' : 'dark');
+    });
+  }
 }
 
 // Mobile menu functionality
@@ -124,16 +127,38 @@ function initMobileMenu() {
   const button = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
   
-  button?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-  });
+  if (button && menu) {
+    // Remove any existing listeners
+    button.replaceWith(button.cloneNode(true));
+    const newButton = document.getElementById('mobile-menu-button');
+    
+    newButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      menu.classList.toggle('hidden');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!newButton.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize on load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initMobileMenu();
+  });
+} else {
   initTheme();
   initMobileMenu();
-});
+}
 
+// Re-initialize on Astro page transitions
 document.addEventListener('astro:page-load', () => {
   initTheme();
   initMobileMenu();
