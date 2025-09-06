@@ -13,7 +13,8 @@
     "thumbnails": "node scripts/generate-thumbnails.js",
     "thumbnails:watch": "node scripts/watch-certificates.js",
     "certificates:update": "node scripts/update-certificates.js",
-    "certificates:setup": "./scripts/setup-certificates.sh"
+    "certificates:setup": "./scripts/setup-certificates.sh",
+    "projects:update": "node scripts/update-projects.js"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.4",
