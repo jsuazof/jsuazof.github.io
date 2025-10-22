@@ -144,4 +144,4 @@ Este portafolio se despliega automáticamente en GitHub Pages usando GitHub Acti
 
 ---
 
-*Portafolio profesional con más de 30 años de experiencia en TI, especializado en arquitectura cloud, DevOps y desarrollo full-stack.*
+*Portafolio profesional con más de 25 años de experiencia en TI, especializado en arquitectura cloud, DevOps y desarrollo full-stack.*
