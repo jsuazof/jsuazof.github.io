@@ -7,7 +7,7 @@ updatedDate: "2022-02-16T21:20:12Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/DesafioOpcional---CuentaRegresiva"
-heroImage: "../../assets/images/itemPreview.webp"
+heroImage: "../../assets/images/JSF.png"
 ---
 
 ## DesafioOpcional   CuentaRegresiva

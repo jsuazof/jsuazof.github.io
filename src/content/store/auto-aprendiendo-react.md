@@ -7,7 +7,7 @@ updatedDate: "2024-09-05T22:17:12Z"
 pricing: "Open Source"
 badge: "JavaScript"
 checkoutUrl: "https://github.com/jsuazof/aprendiendo-react"
-heroImage: "../../assets/images/itemPreview.webp"
+heroImage: "../../assets/images/JSF.png"
 ---
 
 ## Aprendiendo React

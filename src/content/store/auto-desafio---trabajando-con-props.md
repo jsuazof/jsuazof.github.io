@@ -7,7 +7,7 @@ updatedDate: "2022-02-21T23:12:49Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/Desafio---Trabajando-con-Props"
-heroImage: "../../assets/images/itemPreview.webp"
+heroImage: "../../assets/images/JSF.png"
 ---
 
 ## Desafio   Trabajando Con Props

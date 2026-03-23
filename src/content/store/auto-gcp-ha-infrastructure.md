@@ -7,7 +7,7 @@ updatedDate: "2026-03-23T21:51:26Z"
 pricing: "Open Source"
 badge: "HCL"
 checkoutUrl: "https://github.com/jsuazof/gcp-ha-infrastructure"
-heroImage: "../../assets/images/itemPreview.webp"
+heroImage: "../../assets/images/JSF.png"
 ---
 
 ## Gcp Ha Infrastructure

@@ -7,7 +7,7 @@ updatedDate: "2022-02-21T21:50:21Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/Desafio---PokeGuia"
-heroImage: "../../assets/images/itemPreview.webp"
+heroImage: "../../assets/images/JSF.png"
 ---
 
 ## Desafio   PokeGuia
