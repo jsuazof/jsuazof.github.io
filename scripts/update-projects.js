@@ -10,9 +10,9 @@ const CONTENT_DIR = './src/content/store';
 const CONFIG = {
   minStars: 0,
   excludeRepos: ['jsuazof.github.io', 'jsuazof'], // Excluir repos específicos
-  includeLanguages: ['JavaScript', 'TypeScript', 'Java', 'Python', 'HTML', 'CSS', 'Vue', 'React'],
-  priorityLanguages: ['Vue', 'JavaScript', 'TypeScript'], // Lenguajes prioritarios
-  maxRepos: 10
+  includeLanguages: ['JavaScript', 'TypeScript', 'Java', 'Python', 'HTML', 'CSS', 'Vue', 'React', 'HCL'],
+  priorityLanguages: ['Vue', 'Python', 'HCL', 'JavaScript', 'TypeScript'], // Lenguajes prioritarios
+  maxRepos: 15
 };
 
 async function fetchGitHubRepos() {
@@ -31,8 +31,8 @@ function filterRepos(repos) {
     .filter(repo => !repo.fork) // No forks
     .filter(repo => !CONFIG.excludeRepos.includes(repo.name))
     .filter(repo => repo.stargazers_count >= CONFIG.minStars)
-    .filter(repo => !CONFIG.includeLanguages.length || CONFIG.includeLanguages.includes(repo.language))
-    .filter(repo => repo.description); // Debe tener descripción
+    .filter(repo => !CONFIG.includeLanguages.length || CONFIG.includeLanguages.includes(repo.language));
+    // Removido el filtro de descripción obligatoria
 
   // Priorizar proyectos Vue y con topics relacionados
   return filtered
