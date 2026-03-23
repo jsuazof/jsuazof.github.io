@@ -7,7 +7,7 @@ updatedDate: "2026-03-23T21:47:34Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/vue-auth-demo"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Vue Auth Demo

@@ -60,7 +60,7 @@ updatedDate: "${repo.updated_at}"
 pricing: "Open Source"
 badge: "${repo.language || 'Code'}"
 checkoutUrl: "${repo.html_url}"
-heroImage: "../../assets/images/JSF.png"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## ${repo.name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}

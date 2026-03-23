@@ -7,7 +7,7 @@ updatedDate: "2022-02-22T23:02:17Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/Desafio---RandomGifCat"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Desafio   RandomGifCat

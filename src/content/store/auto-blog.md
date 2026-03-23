@@ -7,7 +7,7 @@ updatedDate: "2024-11-02T19:35:01Z"
 pricing: "Open Source"
 badge: "JavaScript"
 checkoutUrl: "https://github.com/jsuazof/blog"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Blog

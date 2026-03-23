@@ -7,7 +7,7 @@ updatedDate: "2022-02-16T20:04:38Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/Desafio---ToDoList"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Desafio   ToDoList

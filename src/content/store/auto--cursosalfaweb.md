@@ -7,7 +7,7 @@ updatedDate: "2022-03-24T00:07:55Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/-CursosAlfaWeb"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ##  CursosAlfaWeb

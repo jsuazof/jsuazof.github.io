@@ -7,7 +7,7 @@ updatedDate: "2022-03-16T14:54:21Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/Prueba-GamesOpinionSite"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Prueba GamesOpinionSite

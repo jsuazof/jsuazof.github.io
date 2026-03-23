@@ -7,7 +7,7 @@ updatedDate: "2022-02-17T20:34:01Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/Desafio---Componentes"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Desafio   Componentes

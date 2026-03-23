@@ -7,7 +7,7 @@ updatedDate: "2026-03-23T21:46:33Z"
 pricing: "Open Source"
 badge: "Python"
 checkoutUrl: "https://github.com/jsuazof/fastapi-backend"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Fastapi Backend

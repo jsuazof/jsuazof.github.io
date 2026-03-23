@@ -7,7 +7,7 @@ updatedDate: "2026-03-23T21:49:57Z"
 pricing: "Open Source"
 badge: "HCL"
 checkoutUrl: "https://github.com/jsuazof/mi-app-gcp"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## Mi App Gcp

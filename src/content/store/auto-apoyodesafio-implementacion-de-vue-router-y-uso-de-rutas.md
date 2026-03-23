@@ -7,7 +7,7 @@ updatedDate: "2022-02-26T20:55:02Z"
 pricing: "Open Source"
 badge: "Vue"
 checkoutUrl: "https://github.com/jsuazof/ApoyoDesafio-Implementacion-de-Vue-Router-y-uso-de-rutas"
-heroImage: "../../assets/images/JSF.webp"
+heroImage: "../../assets/images/itemPreview.webp"
 ---
 
 ## ApoyoDesafio Implementacion De Vue Router Y Uso De Rutas
