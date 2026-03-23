@@ -5,14 +5,44 @@ import { getCollection } from "astro:content";
 import sqlInteractiveImg from "../assets/images/projects/sqlinteractivo.webp";
 import entrevistasImg from "../assets/images/projects/entrevistastecnicas.webp";
 import portfolioImg from "../assets/images/itemPreview.webp";
-import placeholderImg from "../assets/images/post_img.webp";
 
-const storeItems = (await getCollection("store")).sort((a, b) => a.data.title.localeCompare(b.data.title));
+// Obtener todos los proyectos de la colección store
+const allProjects = await getCollection("store");
+
+// Filtrar y categorizar proyectos automáticos
+const autoProjects = allProjects.filter(project => project.id.startsWith('auto-'))
+  .sort((a, b) => new Date(b.data.updatedDate) - new Date(a.data.updatedDate));
+
+// Proyectos Cloud & Infrastructure (HCL, Terraform, GCP, AWS)
+const cloudProjects = autoProjects.filter(project => 
+  project.data.badge === 'HCL' || 
+  project.data.title.toLowerCase().includes('gcp') ||
+  project.data.title.toLowerCase().includes('aws') ||
+  project.data.title.toLowerCase().includes('terraform') ||
+  project.data.title.toLowerCase().includes('infrastructure')
+);
+
+// Proyectos Full-Stack (Python, Vue, JavaScript, TypeScript)
+const fullStackProjects = autoProjects.filter(project => 
+  ['Python', 'Vue', 'JavaScript', 'TypeScript'].includes(project.data.badge) &&
+  !project.data.title.toLowerCase().includes('desafio') &&
+  !project.data.title.toLowerCase().includes('apoyo')
+);
+
+// Proyectos de Aprendizaje (desafíos, ejercicios, cursos)
+const learningProjects = autoProjects.filter(project => 
+  project.data.title.toLowerCase().includes('desafio') ||
+  project.data.title.toLowerCase().includes('apoyo') ||
+  project.data.title.toLowerCase().includes('curso') ||
+  project.data.title.toLowerCase().includes('aprendiendo')
+);
 ---
 
 <ModernLayout title="Proyectos" activeSection="projects">
-  <!-- Sección: Proyectos Personales -->
-  <div class="text-3xl w-full font-bold mb-5">Proyectos Personales</div>
+  <!-- Sección: Proyectos Destacados -->
+  <div class="text-3xl w-full font-bold mb-2">🏆 Proyectos Destacados</div>
+  <p class="text-gray-600 dark:text-gray-400 mb-8">Proyectos principales con impacto real en producción y uso empresarial.</p>
+  
   <HorizontalCard
     title="SQL Interactivo"
     img={sqlInteractiveImg}
@@ -39,6 +69,79 @@ const storeItems = (await getCollection("store")).sort((a, b) => a.data.title.lo
     target="_blank"
     badge="AWS"
   />
-  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
+  
+  <!-- Sección: Proyectos Cloud & Infrastructure -->
+  {cloudProjects.length > 0 && (
+    <>
+      <div class="text-3xl w-full font-bold mb-2 mt-12">☁️ Proyectos Cloud & Infrastructure</div>
+      <p class="text-gray-600 dark:text-gray-400 mb-8">Infraestructura como código, arquitecturas cloud y soluciones de alta disponibilidad.</p>
+      
+      {cloudProjects.map((project, index) => (
+        <>
+          <HorizontalCard
+            title={project.data.title}
+            img={portfolioImg}
+            desc={project.data.description}
+            url={project.data.custom_link || ''}
+            target="_blank"
+            badge={project.data.badge}
+          />
+          {index < cloudProjects.length - 1 && <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>}
+        </>
+      ))}
+    </>
+  )}
+  
+  <!-- Sección: Proyectos Full-Stack -->
+  {fullStackProjects.length > 0 && (
+    <>
+      <div class="text-3xl w-full font-bold mb-2 mt-12">🚀 Proyectos Full-Stack</div>
+      <p class="text-gray-600 dark:text-gray-400 mb-8">Aplicaciones completas con backend, frontend y integraciones modernas.</p>
+      
+      {fullStackProjects.map((project, index) => (
+        <>
+          <HorizontalCard
+            title={project.data.title}
+            img={portfolioImg}
+            desc={project.data.description}
+            url={project.data.custom_link || ''}
+            target="_blank"
+            badge={project.data.badge}
+          />
+          {index < fullStackProjects.length - 1 && <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>}
+        </>
+      ))}
+    </>
+  )}
+  
+  <!-- Sección: Proyectos de Aprendizaje -->
+  {learningProjects.length > 0 && (
+    <>
+      <div class="text-3xl w-full font-bold mb-2 mt-12">📚 Proyectos de Aprendizaje</div>
+      <p class="text-gray-600 dark:text-gray-400 mb-8">Desafíos, ejercicios y proyectos educativos que demuestran crecimiento continuo.</p>
+      
+      {learningProjects.slice(0, 8).map((project, index) => (
+        <>
+          <HorizontalCard
+            title={project.data.title}
+            img={portfolioImg}
+            desc={project.data.description}
+            url={project.data.custom_link || ''}
+            target="_blank"
+            badge={project.data.badge}
+          />
+          {index < Math.min(learningProjects.length, 8) - 1 && <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>}
+        </>
+      ))}
+      
+      {learningProjects.length > 8 && (
+        <div class="text-center mt-8">
+          <p class="text-gray-500 dark:text-gray-400 text-sm">
+            Y {learningProjects.length - 8} proyectos de aprendizaje más...
+          </p>
+        </div>
+      )}
+    </>
+  )}
 
 </ModernLayout>
