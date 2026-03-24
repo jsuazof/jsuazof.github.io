@@ -45,4 +45,44 @@ const {
     
     <Footer />
   </body>
+  
+  <script is:inline>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+      
+      function updateIcons() {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (isDark) {
+          darkIcon?.classList.add('hidden');
+          lightIcon?.classList.remove('hidden');
+        } else {
+          darkIcon?.classList.remove('hidden');
+          lightIcon?.classList.add('hidden');
+        }
+      }
+      
+      // Initialize icons
+      updateIcons();
+      
+      // Toggle theme on button click
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const isDark = document.documentElement.classList.contains('dark');
+          
+          if (isDark) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          }
+          
+          updateIcons();
+        });
+      }
+    });
+  </script>
 </html>
