@@ -21,6 +21,15 @@ const { title, description, image = '/', ogType = 'website' } = Astro.props;
 <link rel="shortcut icon" href="/favicon.ico?v=3" />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MF1EWG67W5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MF1EWG67W5');
+</script>
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />

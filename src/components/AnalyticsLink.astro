@@ -1,0 +1,22 @@
+---
+// Componente para agregar tracking de eventos a enlaces
+export interface Props {
+  href: string;
+  eventName: string;
+  eventCategory?: string;
+  class?: string;
+  target?: string;
+}
+
+const { href, eventName, eventCategory = 'link_click', class: className, target, ...props } = Astro.props;
+---
+
+<a 
+  href={href} 
+  class={className}
+  target={target}
+  onclick={`gtag('event', '${eventName}', { 'event_category': '${eventCategory}', 'event_label': '${href}' })`}
+  {...props}
+>
+  <slot />
+</a>
