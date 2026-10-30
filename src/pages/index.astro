@@ -1,125 +1,44 @@
 ---
 import ModernLayout from "../layouts/ModernLayout.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug";
-// Obtener los últimos posts del blog (si tienes)
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),);
-const last_posts = posts.slice(0, 3);
 ---
 
-<ModernLayout activeSection="home">
-  <div class="pb-16 mt-8 text-center">
-    <div class="text-xl text-gray-600 dark:text-gray-400 mb-2 flex items-center justify-center gap-2">
-      <span class="inline-block animate-pulse">●</span>
-      <span class="typing-animation">Bienvenido</span>
-      <span class="inline-block animate-bounce delay-100">⚡</span>
-    </div>
-    <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-      Soy Jorge Suazo
-    </h1>
-    <h2 class="text-2xl lg:text-3xl font-semibold text-blue-600 dark:text-blue-400 mb-6">
-      Cloud Architect & FullStack Developer
-    </h2>
-    <div class="max-w-3xl mx-auto">
-      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        Cloud Architect & FullStack Developer con más de 25 años de experiencia en TI.
-        Especializado en soluciones cloud escalables en AWS, desarrollo web moderno y
-        arquitecturas distribuidas. Vivo en Santiago de Chile y he liderado proyectos
-        para empresas de los sectores minero, ingeniería y medios digitales. Mi experiencia combina conocimiento
-        técnico profundo con liderazgo estratégico en transformación digital.
+<ModernLayout title="Jorge Suazo | Cybersecurity & Infrastructure Security Analyst" description="IT professional with 25+ years of experience in infrastructure, networking, systems administration, cloud technologies and cybersecurity." activeSection="home">
+  <section class="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+    <div class="absolute inset-y-0 right-0 hidden w-1/3 bg-[linear-gradient(135deg,transparent_20%,rgba(37,99,235,.12)_20%,rgba(37,99,235,.12)_21%,transparent_21%)] bg-[length:24px_24px] lg:block" aria-hidden="true"></div>
+    <div class="relative max-w-4xl">
+      <p class="mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-blue-400">
+        <span data-lang="es">Perfil profesional</span><span data-lang="en" class="hidden">Professional profile</span>
       </p>
-    </div>
-    <div class="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
-      <a
-        class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-        href="https://www.linkedin.com/in/jorgesuazof/"
-        target="_blank"
-      >
-        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
-        </svg>
-        Conectemos en LinkedIn
-      </a>
-      <a
-        href="https://github.com/jsuazof"
-        target="_blank"
-        class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-      >
-        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
-        </svg>
-        Ver mi GitHub
-      </a>
-      <a
-        href="mailto:jsuazof@gmail.com"
-        class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-      >
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-        </svg>
-        Contacto
-      </a>
-    </div>
-  </div>
-
-  <!-- Últimos artículos del blog (solo si tienes blog) -->
-  <!-- {
-    last_posts.length > 0 && (
-      <>
-        {" "}
-        <div class="text-3xl w-full font-bold mb-5 mt-10">
-          Últimos del blog
-        </div>{" "}
-        {last_posts.map((post) => (
-          <>
-            {" "}
-            <HorizontalCard
-              title={post.data.title}
-              img={post.data.heroImage}
-              desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.title, post.slug)}
-              target="_self"
-              badge={post.data.badge}
-            />{" "}
-            <div class="divider my-0" />{" "}
-          </>
-        ))}{" "}
-      </>
-    )
-  }
-  -->
-
-  <!-- Si no tienes blog, puedes mostrar esto -->
-  <!--
-  {
-    last_posts.length === 0 && (
-      <div class="text-center py-6 text-gray-500 mt-8">
-        {" "}
-        <p>
-          Próximamente nuevos artículos sobre desarrollo web, cloud y más.
-        </p>{" "}
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">Jorge Suazo</h1>
+      <h2 class="mt-4 text-xl font-semibold text-blue-400 sm:text-2xl lg:text-3xl">Cybersecurity &amp; Infrastructure Security Analyst</h2>
+      <div class="mt-7 max-w-3xl space-y-4 text-base leading-7 text-slate-300 sm:text-lg">
+        <p><span data-lang="es">Profesional TI con más de 25 años de experiencia en infraestructura, redes, administración de sistemas y tecnologías cloud. Mi trayectoria incluye entornos Windows y Linux, arquitectura de redes, Active Directory, seguridad perimetral, gestión de accesos, monitoreo de infraestructura, hardening, respaldos y recuperación.</span><span data-lang="en" class="hidden">IT professional with over 25 years of experience in infrastructure, networking, systems administration and cloud technologies. My background includes Windows and Linux environments, network architecture, Active Directory, perimeter security, access management, infrastructure monitoring, hardening, backup and recovery.</span></p>
+        <p><span data-lang="es">Actualmente fortalezco mi especialización en ciberseguridad mediante formación en operaciones de seguridad, análisis de logs, identificación de vulnerabilidades y automatización con Python.</span><span data-lang="en" class="hidden">I am currently strengthening my cybersecurity expertise through specialized training in security operations, log analysis, vulnerability identification and Python automation.</span></p>
+        <p><span data-lang="es">Mi objetivo es contribuir a entornos tecnológicos seguros, confiables y resilientes.</span><span data-lang="en" class="hidden">My goal is to contribute to secure, reliable and resilient IT environments.</span></p>
       </div>
-    )
-  }
-  -->
+    </div>
+
+    <div class="relative mt-9 flex flex-wrap gap-3">
+      <a href="/projects/" class="rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-950"><span data-lang="es">Ver proyectos</span><span data-lang="en" class="hidden">View projects</span></a>
+      <a href="/certificates/" class="rounded-lg border border-slate-700 bg-slate-900 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-500 hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400"><span data-lang="es">Ver certificados</span><span data-lang="en" class="hidden">View certificates</span></a>
+      <a href="https://www.linkedin.com/in/jorgesuazof/" target="_blank" rel="noopener noreferrer" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-300 transition hover:text-white">LinkedIn</a>
+      <a href="https://github.com/jsuazof" target="_blank" rel="noopener noreferrer" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-300 transition hover:text-white">GitHub</a>
+      <a href="mailto:jsuazof@gmail.com" class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-300 transition hover:text-white"><span data-lang="es">Contacto</span><span data-lang="en" class="hidden">Contact</span></a>
+    </div>
+  </section>
+
+  <section class="mt-10" aria-labelledby="expertise-heading">
+    <h2 id="expertise-heading" class="mb-5 text-xl font-bold text-slate-100 sm:text-2xl"><span data-lang="es">Áreas de especialización</span><span data-lang="en" class="hidden">Areas of expertise</span></h2>
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {["Infrastructure Security","Network Security","Cloud Security","Windows & Linux","Security Operations","Python Automation"].map((area) => (
+        <div class="rounded-xl border border-slate-800 bg-slate-900/70 px-5 py-4 text-sm font-semibold text-slate-200">
+          <span class="mr-3 inline-block h-2 w-2 rounded-full bg-blue-500"></span>{area}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-10 border-t border-slate-800 pt-8">
+    <p class="max-w-3xl text-sm leading-6 text-slate-400"><span data-lang="es">Trayectoria profesional de más de dos décadas en infraestructura tecnológica, con especialización tecnológica orientada hacia seguridad de infraestructura, operaciones de seguridad y automatización.</span><span data-lang="en" class="hidden">Professional background spanning more than two decades in technology infrastructure, with a technical specialization increasingly focused on infrastructure security, security operations and automation.</span></p>
+  </section>
 </ModernLayout>
-
-<style>
-.typing-animation {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 2s steps(9, end);
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 9ch; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .typing-animation {
-    animation: none;
-  }
-}
-</style>
-

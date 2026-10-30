@@ -1,147 +1,59 @@
 ---
 import ModernLayout from "../layouts/ModernLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import sqlInteractiveImg from "../assets/images/projects/sqlinteractivo.webp";
-import entrevistasImg from "../assets/images/projects/entrevistastecnicas.webp";
 import portfolioImg from "../assets/images/itemPreview.webp";
 
-// Obtener todos los proyectos de la colección store
 const allProjects = await getCollection("store");
-
-// Filtrar y categorizar proyectos automáticos
-const autoProjects = allProjects.filter(project => project.id.startsWith('auto-'))
-  .sort((a, b) => new Date(b.data.updatedDate) - new Date(a.data.updatedDate));
-
-// Proyectos Cloud & Infrastructure (HCL, Terraform, GCP, AWS)
-const cloudProjects = autoProjects.filter(project => 
-  project.data.badge === 'HCL' || 
-  project.data.title.toLowerCase().includes('gcp') ||
-  project.data.title.toLowerCase().includes('aws') ||
-  project.data.title.toLowerCase().includes('terraform') ||
-  project.data.title.toLowerCase().includes('infrastructure')
-);
-
-// Proyectos Full-Stack (Python, Vue, JavaScript, TypeScript)
-const fullStackProjects = autoProjects.filter(project => 
-  ['Python', 'Vue', 'JavaScript', 'TypeScript'].includes(project.data.badge) &&
-  !project.data.title.toLowerCase().includes('desafio') &&
-  !project.data.title.toLowerCase().includes('apoyo')
-);
-
-// Proyectos de Aprendizaje (desafíos, ejercicios, cursos)
-const learningProjects = autoProjects.filter(project => 
-  project.data.title.toLowerCase().includes('desafio') ||
-  project.data.title.toLowerCase().includes('apoyo') ||
-  project.data.title.toLowerCase().includes('curso') ||
-  project.data.title.toLowerCase().includes('aprendiendo')
-);
+const cloudProjects = allProjects.filter((project) =>
+  project.data.badge === "HCL" ||
+  /gcp|aws|cloud|terraform|infrastructure/i.test(project.data.title)
+).sort((a, b) => String(b.data.updatedDate).localeCompare(String(a.data.updatedDate)));
+const softwareProjects = allProjects.filter((project) => !cloudProjects.includes(project));
 ---
 
-<ModernLayout title="Proyectos" activeSection="projects">
-  <!-- Sección: Proyectos Destacados -->
-  <div class="text-3xl w-full font-bold mb-2">🏆 Proyectos Destacados</div>
-  <p class="text-gray-600 dark:text-gray-400 mb-8">Proyectos principales con impacto real en producción y uso empresarial.</p>
-  
-  <HorizontalCard
-    title="SQL Interactivo"
-    img={sqlInteractiveImg}
-    desc="Sitio web educativo para aprender y practicar consultas SQL con ejemplos interactivos. Ideal para preparar entrevistas técnicas."
-    url="https://sqlinteractivo.desafiolatam.com/"
-    target="_blank"
-    badge="Educativo"
-  />
-  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
-  <HorizontalCard
-    title="Entrevistas Técnicas"
-    img={entrevistasImg}
-    desc="Plataforma para RRHH en Desafío Latam con preguntas y ejercicios comunes en entrevistas técnicas de desarrollo."
-    url=""
-    target="_self"
-    badge="Intranet"
-  />
-  <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>
-  <HorizontalCard
-    title="Proyecto ABP - AWS"
-    img={portfolioImg}
-    desc="Marco teórico de Aprendizaje Basado en Problemas desarrollado durante el curso de AWS. Documentación de soluciones cloud escalables y arquitecturas distribuidas."
-    url="https://github.com/jsuazof/Proyecto-ABP"
-    target="_blank"
-    badge="AWS"
-  />
-  
-  <!-- Sección: Proyectos Cloud & Infrastructure -->
-  {cloudProjects.length > 0 && (
-    <>
-      <div class="text-3xl w-full font-bold mb-2 mt-12">☁️ Proyectos Cloud & Infrastructure</div>
-      <p class="text-gray-600 dark:text-gray-400 mb-8">Infraestructura como código, arquitecturas cloud y soluciones de alta disponibilidad.</p>
-      
-      {cloudProjects.map((project, index) => (
-        <>
-          <HorizontalCard
-            title={project.data.title}
-            img={portfolioImg}
-            desc={project.data.description}
-            url={project.data.custom_link || ''}
-            target="_blank"
-            badge={project.data.badge}
-          />
-          {index < cloudProjects.length - 1 && <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>}
-        </>
-      ))}
-    </>
-  )}
-  
-  <!-- Sección: Proyectos Full-Stack -->
-  {fullStackProjects.length > 0 && (
-    <>
-      <div class="text-3xl w-full font-bold mb-2 mt-12">🚀 Proyectos Full-Stack</div>
-      <p class="text-gray-600 dark:text-gray-400 mb-8">Aplicaciones completas con backend, frontend y integraciones modernas.</p>
-      
-      {fullStackProjects.map((project, index) => (
-        <>
-          <HorizontalCard
-            title={project.data.title}
-            img={portfolioImg}
-            desc={project.data.description}
-            url={project.data.custom_link || ''}
-            target="_blank"
-            badge={project.data.badge}
-          />
-          {index < fullStackProjects.length - 1 && <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>}
-        </>
-      ))}
-    </>
-  )}
-  
-  <!-- Sección: Proyectos de Aprendizaje -->
-  {learningProjects.length > 0 && (
-    <>
-      <div class="text-3xl w-full font-bold mb-2 mt-12">📚 Proyectos de Aprendizaje</div>
-      <p class="text-gray-600 dark:text-gray-400 mb-8">Desafíos, ejercicios y proyectos educativos que demuestran crecimiento continuo.</p>
-      
-      {learningProjects.slice(0, 8).map((project, index) => (
-        <>
-          <HorizontalCard
-            title={project.data.title}
-            img={portfolioImg}
-            desc={project.data.description}
-            url={project.data.custom_link || ''}
-            target="_blank"
-            badge={project.data.badge}
-          />
-          {index < Math.min(learningProjects.length, 8) - 1 && <div class="border-t border-gray-200 dark:border-gray-700 my-6"></div>}
-        </>
-      ))}
-      
-      {learningProjects.length > 8 && (
-        <div class="text-center mt-8">
-          <p class="text-gray-500 dark:text-gray-400 text-sm">
-            Y {learningProjects.length - 8} proyectos de aprendizaje más...
-          </p>
-        </div>
-      )}
-    </>
-  )}
+<ModernLayout title="Proyectos | Jorge Suazo" description="Proyectos de infraestructura, cloud, automatización, ciberseguridad y desarrollo de Jorge Suazo." activeSection="projects">
+  <header class="mb-10">
+    <p class="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-blue-400"><span data-lang="es">Portafolio técnico</span><span data-lang="en" class="hidden">Technical portfolio</span></p>
+    <h1 class="text-4xl font-bold text-white sm:text-5xl"><span data-lang="es">Proyectos</span><span data-lang="en" class="hidden">Projects</span></h1>
+  </header>
 
+  <section aria-labelledby="cyber-heading">
+    <h2 id="cyber-heading" class="text-2xl font-bold text-white">Cybersecurity &amp; Infrastructure</h2>
+    <p class="mt-2 max-w-3xl text-slate-400"><span data-lang="es">Esta sección será completada con proyectos verificables de seguridad de infraestructura, redes, análisis de logs y automatización. No se atribuyen laboratorios o resultados que no estén documentados en el repositorio.</span><span data-lang="en" class="hidden">This section will be completed with verifiable infrastructure security, networking, log analysis and automation projects. No laboratory work or results without repository documentation are inferred.</span></p>
+  </section>
+
+  <section class="mt-12" aria-labelledby="cloud-heading">
+    <h2 id="cloud-heading" class="text-2xl font-bold text-white"><span data-lang="es">Cloud &amp; Infrastructure</span><span data-lang="en" class="hidden">Cloud &amp; Infrastructure</span></h2>
+    <p class="mt-2 mb-6 text-slate-400"><span data-lang="es">Infraestructura como código, plataformas cloud y arquitecturas documentadas.</span><span data-lang="en" class="hidden">Infrastructure as code, cloud platforms and documented architectures.</span></p>
+    <article class="mb-4 rounded-xl border border-slate-800 bg-slate-900/70 p-5 sm:flex sm:items-center sm:justify-between">
+      <div class="max-w-3xl"><div class="mb-2 text-xs font-bold uppercase tracking-wider text-blue-400">AWS</div><h3 class="text-xl font-semibold text-white">Proyecto ABP - AWS</h3><p class="mt-2 text-sm leading-6 text-slate-400"><span data-lang="es">Marco teórico de Aprendizaje Basado en Problemas documentado durante formación AWS.</span><span data-lang="en" class="hidden">Problem-Based Learning framework documented during AWS training.</span></p></div>
+      <a href="https://github.com/jsuazof/Proyecto-ABP" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-blue-500 sm:mt-0"><span data-lang="es">Ver repositorio</span><span data-lang="en" class="hidden">View repository</span></a>
+    </article>
+    {cloudProjects.map((project) => (
+      <article class="mb-4 rounded-xl border border-slate-800 bg-slate-900/70 p-5 sm:flex sm:items-center sm:justify-between">
+        <div class="max-w-3xl"><div class="mb-2 text-xs font-bold uppercase tracking-wider text-blue-400">{project.data.badge || "Infrastructure"}</div><h3 class="text-xl font-semibold text-white">{project.data.title}</h3><p class="mt-2 text-sm leading-6 text-slate-400">{project.data.description}</p></div>
+        {project.data.custom_link && <a href={project.data.custom_link} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-blue-500 sm:mt-0"><span data-lang="es">Ver repositorio</span><span data-lang="en" class="hidden">View repository</span></a>}
+      </article>
+    ))}
+  </section>
+
+  <section class="mt-12" aria-labelledby="software-heading">
+    <h2 id="software-heading" class="text-2xl font-bold text-white"><span data-lang="es">Software Development</span><span data-lang="en" class="hidden">Software Development</span></h2>
+    <p class="mt-2 mb-6 text-slate-400"><span data-lang="es">Conocimiento de desarrollo conservado como complemento técnico.</span><span data-lang="en" class="hidden">Development knowledge retained as complementary technical evidence.</span></p>
+    <article class="mb-4 rounded-xl border border-slate-800 bg-slate-900/70 p-5 sm:flex sm:items-center sm:justify-between">
+      <div class="max-w-3xl"><div class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">SQL</div><h3 class="text-xl font-semibold text-white">SQL Interactivo</h3><p class="mt-2 text-sm leading-6 text-slate-400"><span data-lang="es">Sitio educativo para practicar consultas SQL con ejemplos interactivos.</span><span data-lang="en" class="hidden">Educational site for practicing SQL queries with interactive examples.</span></p></div>
+      <a href="https://sqlinteractivo.desafiolatam.com/" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-blue-500 sm:mt-0"><span data-lang="es">Abrir proyecto</span><span data-lang="en" class="hidden">Open project</span></a>
+    </article>
+    <article class="mb-4 rounded-xl border border-slate-800 bg-slate-900/70 p-5 sm:flex sm:items-center sm:justify-between">
+      <div class="max-w-3xl"><div class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">Astro</div><h3 class="text-xl font-semibold text-white">Astro Portfolio</h3><p class="mt-2 text-sm leading-6 text-slate-400"><span data-lang="es">Portafolio personal desarrollado con Astro y TailwindCSS.</span><span data-lang="en" class="hidden">Personal portfolio developed with Astro and TailwindCSS.</span></p></div>
+      <a href="https://github.com/jsuazof/jsuazof.github.io" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-blue-500 sm:mt-0"><span data-lang="es">Ver repositorio</span><span data-lang="en" class="hidden">View repository</span></a>
+    </article>
+    {softwareProjects.map((project) => (
+      <article class="mb-4 rounded-xl border border-slate-800 bg-slate-900/70 p-5 sm:flex sm:items-center sm:justify-between">
+        <div class="max-w-3xl"><div class="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">{project.data.badge || "Software"}</div><h3 class="text-xl font-semibold text-white">{project.data.title}</h3><p class="mt-2 text-sm leading-6 text-slate-400">{project.data.description}</p></div>
+        {project.data.custom_link && <a href={project.data.custom_link} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-blue-500 sm:mt-0"><span data-lang="es">Ver repositorio</span><span data-lang="en" class="hidden">View repository</span></a>}
+      </article>
+    ))}
+  </section>
 </ModernLayout>
