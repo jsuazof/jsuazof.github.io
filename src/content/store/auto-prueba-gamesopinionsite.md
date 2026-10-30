@@ -1,6 +1,6 @@
 ---
 title: "Prueba GamesOpinionSite"
-description: "Prueba-GamesOpinionSite"
+description: "Prototipo web en Vue.js para presentar juegos y opiniones de usuarios mediante una interfaz interactiva."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/Prueba-GamesOpinionSite"
 updatedDate: "2022-03-16T14:54:21Z"

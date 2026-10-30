@@ -1,6 +1,6 @@
 ---
 title: "ApoyoDesafio Implementacion De Vue Router Y Uso De Rutas"
-description: "ApoyoDesafio-Implementacion-de-Vue-Router-y-uso-de-rutas"
+description: "Ejemplo práctico de navegación y configuración de rutas en una aplicación Vue.js."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/ApoyoDesafio-Implementacion-de-Vue-Router-y-uso-de-rutas"
 updatedDate: "2022-02-26T20:55:02Z"

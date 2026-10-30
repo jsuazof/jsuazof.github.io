@@ -1,6 +1,6 @@
 ---
 title: "Gcp Ha Infrastructure"
-description: "Proyecto de desarrollo"
+description: "Ejercicio de infraestructura como código en Google Cloud Platform utilizando HCL y principios de alta disponibilidad."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/gcp-ha-infrastructure"
 updatedDate: "2026-03-23T21:51:26Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## Gcp Ha Infrastructure
 
-Proyecto de desarrollo
+Ejercicio de infraestructura como código en Google Cloud Platform utilizando HCL y principios de alta disponibilidad.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ Proyecto de desarrollo
 
 ### 📋 Descripción
 
-Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.
+Ejercicio de infraestructura como código en Google Cloud Platform utilizando HCL y principios de alta disponibilidad.
 
 
 

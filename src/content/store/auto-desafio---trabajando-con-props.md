@@ -1,6 +1,6 @@
 ---
 title: "Desafio   Trabajando Con Props"
-description: "Desafio---Trabajando-con-Props"
+description: "Ejercicio práctico en Vue.js sobre comunicación entre componentes mediante propiedades."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/Desafio---Trabajando-con-Props"
 updatedDate: "2022-02-21T23:12:49Z"

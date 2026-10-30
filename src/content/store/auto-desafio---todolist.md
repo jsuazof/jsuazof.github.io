@@ -1,6 +1,6 @@
 ---
 title: "Desafio   ToDoList"
-description: "Desafio---ToDoList"
+description: "Aplicación Vue.js para crear, listar y gestionar tareas como ejercicio de componentes y estado."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/Desafio---ToDoList"
 updatedDate: "2022-02-16T20:04:38Z"

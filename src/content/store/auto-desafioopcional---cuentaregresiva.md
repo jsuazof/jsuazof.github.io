@@ -1,6 +1,6 @@
 ---
 title: "DesafioOpcional   CuentaRegresiva"
-description: "Proyecto de desarrollo"
+description: "Aplicación Vue de cuenta regresiva desarrollada como ejercicio práctico de estado, temporizadores y componentes."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/DesafioOpcional---CuentaRegresiva"
 updatedDate: "2022-02-16T21:20:12Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## DesafioOpcional   CuentaRegresiva
 
-Proyecto de desarrollo
+Aplicación Vue de cuenta regresiva desarrollada como ejercicio práctico de estado, temporizadores y componentes.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ Proyecto de desarrollo
 
 ### 📋 Descripción
 
-Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.
+Aplicación Vue de cuenta regresiva desarrollada como ejercicio práctico de estado, temporizadores y componentes.
 
 
 

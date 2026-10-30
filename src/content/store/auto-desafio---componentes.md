@@ -1,6 +1,6 @@
 ---
 title: "Desafio   Componentes"
-description: "Desafio---Componentes"
+description: "Ejercicio práctico de Vue.js enfocado en la creación y composición de componentes reutilizables."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/Desafio---Componentes"
 updatedDate: "2022-02-17T20:34:01Z"

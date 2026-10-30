@@ -1,6 +1,6 @@
 ---
 title: "Desafio   PokeGuia"
-description: "Desafio---PokeGuia"
+description: "Ejercicio práctico en Vue.js para consultar y mostrar información de Pokémon desde una interfaz web."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/Desafio---PokeGuia"
 updatedDate: "2022-02-21T21:50:21Z"

@@ -1,6 +1,6 @@
 ---
 title: "Fastapi Backend"
-description: "Proyecto de desarrollo"
+description: "Proyecto de aprendizaje con Python y FastAPI para practicar la construcción de servicios backend."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/fastapi-backend"
 updatedDate: "2026-03-23T21:46:33Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## Fastapi Backend
 
-Proyecto de desarrollo
+Proyecto de aprendizaje con Python y FastAPI para practicar la construcción de servicios backend.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ Proyecto de desarrollo
 
 ### 📋 Descripción
 
-Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.
+Proyecto de aprendizaje con Python y FastAPI para practicar la construcción de servicios backend.
 
 
 

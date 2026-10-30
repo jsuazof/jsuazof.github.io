@@ -1,6 +1,6 @@
 ---
 title: "Desafio   RandomGifCat"
-description: "Desafio---RandomGifCat"
+description: "Ejercicio de Vue.js para integrar imágenes aleatorias y mostrar contenido dinámico en una interfaz web."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/Desafio---RandomGifCat"
 updatedDate: "2022-02-22T23:02:17Z"

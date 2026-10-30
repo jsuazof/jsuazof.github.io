@@ -1,6 +1,6 @@
 ---
 title: "Aprendiendo React"
-description: "Proyecto de desarrollo"
+description: "Ejercicios de formación en React para practicar componentes, interfaces y estado."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/aprendiendo-react"
 updatedDate: "2024-09-05T22:17:12Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## Aprendiendo React
 
-Proyecto de desarrollo
+Ejercicios de formación en React para practicar componentes, interfaces y estado.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ Proyecto de desarrollo
 
 ### 📋 Descripción
 
-Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.
+Ejercicios de formación en React para practicar componentes, interfaces y estado.
 
 
 

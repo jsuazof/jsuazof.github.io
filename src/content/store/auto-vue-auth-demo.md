@@ -1,6 +1,6 @@
 ---
 title: "Vue Auth Demo"
-description: "Proyecto de desarrollo"
+description: "Ejercicio formativo en Vue.js para practicar conceptos de autenticación en una aplicación web."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/vue-auth-demo"
 updatedDate: "2026-03-23T21:47:34Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## Vue Auth Demo
 
-Proyecto de desarrollo
+Ejercicio formativo en Vue.js para practicar conceptos de autenticación en una aplicación web.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ Proyecto de desarrollo
 
 ### 📋 Descripción
 
-Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.
+Ejercicio formativo en Vue.js para practicar conceptos de autenticación en una aplicación web.
 
 
 

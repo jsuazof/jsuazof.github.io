@@ -1,6 +1,6 @@
 ---
 title: " CursosAlfaWeb"
-description: " CursosAlfaWeb"
+description: "Proyecto formativo en Vue.js desarrollado para practicar componentes, datos y vistas web."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/-CursosAlfaWeb"
 updatedDate: "2022-03-24T00:07:55Z"

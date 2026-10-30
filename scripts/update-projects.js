@@ -50,10 +50,26 @@ function filterRepos(repos) {
     .slice(0, CONFIG.maxRepos);
 }
 
+function getProjectDescription(repo) {
+  if (repo.description?.trim()) return repo.description.trim();
+
+  const descriptions = {
+    'gcp-ha-infrastructure': 'Ejercicio de infraestructura como código en Google Cloud Platform utilizando HCL y principios de alta disponibilidad.',
+    'mi-app-gcp': 'Prototipo formativo de infraestructura en Google Cloud Platform definido con HCL.',
+    'vue-auth-demo': 'Ejercicio formativo en Vue.js para practicar conceptos de autenticación en una aplicación web.',
+    'fastapi-backend': 'Proyecto de aprendizaje con Python y FastAPI para practicar la construcción de servicios backend.',
+    'blog': 'Ejercicio web en JavaScript para practicar la publicación y organización de contenido tipo blog.',
+    'aprendiendo-react': 'Ejercicios de formación en React para practicar componentes, interfaces y estado.',
+  };
+
+  return descriptions[repo.name.toLowerCase()] || `Ejercicio práctico en ${repo.language || 'tecnologías web'} basado en el repositorio ${repo.name}.`;
+}
+
 function generateMarkdown(repo) {
+  const description = getProjectDescription(repo).replace(/"/g, '\\"');
   return `---
 title: "${repo.name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}"
-description: "${repo.description || 'Proyecto de desarrollo'}"
+description: "${description}"
 custom_link_label: "Ver Código"
 custom_link: "${repo.html_url}"
 updatedDate: "${repo.updated_at}"
@@ -65,7 +81,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## ${repo.name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
 
-${repo.description || 'Proyecto de desarrollo'}
+${description}
 
 ### 🚀 Características
 
@@ -76,7 +92,7 @@ ${repo.topics && repo.topics.length ? `- **Tecnologías**: ${repo.topics.join(',
 
 ### 📋 Descripción
 
-${repo.description || 'Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.'}
+${description}
 
 ${repo.homepage ? `### 🌐 Demo\n[Ver proyecto en vivo](${repo.homepage})` : ''}
 

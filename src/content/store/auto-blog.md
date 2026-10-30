@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-description: "Proyecto de desarrollo"
+description: "Ejercicio web en JavaScript para practicar la publicación y organización de contenido tipo blog."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/blog"
 updatedDate: "2024-11-02T19:35:01Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## Blog
 
-Proyecto de desarrollo
+Ejercicio web en JavaScript para practicar la publicación y organización de contenido tipo blog.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ Proyecto de desarrollo
 
 ### 📋 Descripción
 
-Este proyecto demuestra habilidades de desarrollo y mejores prácticas de programación.
+Ejercicio web en JavaScript para practicar la publicación y organización de contenido tipo blog.
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Mi App Gcp"
-description: "test01"
+description: "Prototipo formativo de infraestructura en Google Cloud Platform definido con HCL."
 custom_link_label: "Ver Código"
 custom_link: "https://github.com/jsuazof/mi-app-gcp"
 updatedDate: "2026-03-23T21:49:57Z"
@@ -12,7 +12,7 @@ heroImage: "../../assets/images/itemPreview.webp"
 
 ## Mi App Gcp
 
-test01
+Prototipo formativo de infraestructura en Google Cloud Platform definido con HCL.
 
 ### 🚀 Características
 
@@ -23,7 +23,7 @@ test01
 
 ### 📋 Descripción
 
-test01
+Prototipo formativo de infraestructura en Google Cloud Platform definido con HCL.
 
 
 
