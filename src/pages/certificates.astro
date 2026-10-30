@@ -2,6 +2,7 @@
 import ModernLayout from "../layouts/ModernLayout.astro";
 
 const cybersecurity = [
+  { title: "Google Cybersecurity Professional Certificate", provider: "Google / Coursera", kind: "Professional Certificate", file: "/certificates/Google_CyberSecurity.pdf" },
   { title: "Formación en Ciberseguridad", provider: "Nodo / Desafío Latam", kind: "Training Program — In Progress", file: "" },
 ];
 const cloud = [
@@ -19,11 +20,6 @@ const software = [
 ];
 const awsModules = [
   ["Amazon Elastic Block Store", "AWS_AmazonElasticBlockStore.pdf"], ["Amazon RDS Service Primer", "AWS_AmazonRDS_ServicePrimer.pdf"], ["Amazon Simple Storage Service", "AWS_AmazonSimpleStorageService.pdf"], ["Amazon Transcribe Getting Started", "AWS_AmazonTranscribeGetting.pdf"], ["Architecting Serverless Solutions", "AWS_ArchitectingServerless.pdf"], ["AWS Backup Primer", "AWS_BackupPrimer.pdf"], ["AWS Basics of Managed Services", "AWS_BasicsManagedServices.pdf"], ["AWS Billing and Cost Management", "AWS_Billing_and_Cost.pdf"], ["AWS Command Line Interface", "AWS_Command_Line_Interface.pdf"], ["AWS Database Offerings", "AWS_DatabaseOfferings.pdf"], ["AWS Identity and Access Management", "AWS_IdentityAndAccessManagement.pdf"], ["AWS Introduction to Auto Scaling", "AWS_IntroductionToAutoScaling.pdf"], ["AWS Introduction to Management Console", "AWS_IntroductionToManagementConsole.pdf"], ["AWS Shared Responsibility Model", "AWS_SharedResponsibility.pdf"], ["AWS Subnets, Gateways & Route Tables", "AWS_SubnetsGateways_RouteTablesExplained.pdf"], ["AWS Technical Essentials", "AWS_TechnicalEssentials.pdf"], ["AWS Cloud Operating Models", "AWS_WorksWithinCloudOperatingModels.pdf"]
-];
-const professional = [
-  { title: "Google Cybersecurity Professional Certificate", provider: "Google / Coursera", kind: "Professional Certificate", file: "/certificates/Google_CyberSecurity.pdf" },
-  { title: "IPCHILE Professional Certificate", provider: "IPCHILE", kind: "Course Completion Certificate", file: "/certificates/Diplomado_Certificado_IPCHILE.pdf" },
-  { title: "IPCHILE Module Diploma", provider: "IPCHILE", kind: "Course Completion Certificate", file: "/certificates/Diplomado_Diploma_modulo_IPCHILE.pdf" },
 ];
 ---
 <ModernLayout title="Certificados | Jorge Suazo" description="Formación y certificados en ciberseguridad, cloud computing, infraestructura, automatización y desarrollo." activeSection="certificates">
@@ -53,13 +49,6 @@ const professional = [
       </section>
     ))}
   </div>
-
-  <section class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-    <h2 class="text-xl font-bold text-white"><span data-lang="es">Certificaciones profesionales y certificados de cursos</span><span data-lang="en" class="hidden">Professional &amp; course completion certificates</span></h2>
-    <div class="mt-5 grid gap-3 md:grid-cols-2">
-      {professional.map((item) => <article class="rounded-xl border border-slate-800 bg-slate-950/60 p-4"><div class="flex justify-between gap-3"><div><h3 class="font-semibold text-slate-100">{item.title}</h3><p class="mt-1 text-sm text-slate-400">{item.provider}</p></div>{item.file && <a href={item.file} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-400">PDF</a>}</div><p class="mt-3 text-xs text-blue-300">{item.kind}</p></article>)}
-    </div>
-  </section>
 
   <section class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
     <h2 class="text-xl font-bold text-white">AWS — <span data-lang="es">Certificados de cursos completados</span><span data-lang="en" class="hidden">Course completion certificates</span></h2>
