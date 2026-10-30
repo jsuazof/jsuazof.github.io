@@ -25,27 +25,62 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, activeSection
     <main class="min-h-[calc(100vh-8rem)]"><div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"><slot /></div></main>
     <Footer />
     <script is:inline>
-      function applyLanguage(lang) {
+      window.applyPortfolioLanguage = function(lang) {
         document.documentElement.lang = lang;
-        document.querySelectorAll('[data-lang]').forEach((el) => el.classList.toggle('hidden', el.dataset.lang !== lang));
-        const button = document.getElementById('language-toggle');
-        if (button) { button.textContent = lang === 'es' ? 'EN' : 'ES'; button.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español'); }
-        localStorage.setItem('portfolio-language', lang);
-      }
-      function initPortfolioShell() {
-        const language = localStorage.getItem('portfolio-language') || 'es';
-        applyLanguage(language);
-        document.getElementById('language-toggle')?.addEventListener('click', () => applyLanguage(document.documentElement.lang === 'es' ? 'en' : 'es'));
-        document.getElementById('theme-toggle')?.addEventListener('click', () => {
-          const isDark = document.documentElement.classList.toggle('dark');
-          localStorage.setItem('theme', isDark ? 'dark' : 'light');
-          document.body.classList.toggle('bg-slate-950', isDark); document.body.classList.toggle('bg-slate-100', !isDark);
+        document.querySelectorAll('[data-lang]').forEach((el) => {
+          el.classList.toggle('hidden', el.dataset.lang !== lang);
         });
+        const button = document.getElementById('language-toggle');
+        if (button) {
+          button.textContent = lang === 'es' ? 'EN' : 'ES';
+          button.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a español');
+        }
+        localStorage.setItem('portfolio-language', lang);
+      };
+
+      window.applyPortfolioTheme = function(theme) {
+        const isDark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+        document.body?.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      };
+
+      function initPortfolioShell() {
+        window.applyPortfolioLanguage(localStorage.getItem('portfolio-language') || 'es');
+        window.applyPortfolioTheme(localStorage.getItem('theme') || 'dark');
+
+        const languageButton = document.getElementById('language-toggle');
+        if (languageButton && !languageButton.dataset.initialized) {
+          languageButton.dataset.initialized = 'true';
+          languageButton.addEventListener('click', () => {
+            const current = document.documentElement.lang === 'es' ? 'es' : 'en';
+            window.applyPortfolioLanguage(current === 'es' ? 'en' : 'es');
+          });
+        }
+
+        const themeButton = document.getElementById('theme-toggle');
+        if (themeButton && !themeButton.dataset.initialized) {
+          themeButton.dataset.initialized = 'true';
+          themeButton.addEventListener('click', () => {
+            const nextTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+            window.applyPortfolioTheme(nextTheme);
+          });
+        }
+
         const mobileButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileButton?.addEventListener('click', () => { const expanded = mobileButton.getAttribute('aria-expanded') === 'true'; mobileButton.setAttribute('aria-expanded', String(!expanded)); mobileMenu?.classList.toggle('hidden', expanded); });
+        if (mobileButton && !mobileButton.dataset.initialized) {
+          mobileButton.dataset.initialized = 'true';
+          mobileButton.addEventListener('click', () => {
+            const expanded = mobileButton.getAttribute('aria-expanded') === 'true';
+            mobileButton.setAttribute('aria-expanded', String(!expanded));
+            mobileMenu?.classList.toggle('hidden', expanded);
+          });
+        }
       }
-      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPortfolioShell); else initPortfolioShell();
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPortfolioShell);
+      else initPortfolioShell();
       document.addEventListener('astro:page-load', initPortfolioShell);
     </script>
   </body>
