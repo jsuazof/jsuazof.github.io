@@ -45,3 +45,62 @@ const nav = [
     </nav>
   </div>
 </header>
+
+<script is:inline>
+  function syncPortfolioHeader() {
+    const theme = localStorage.getItem('theme') || 'dark';
+    const isDark = theme === 'dark';
+    document.documentElement.classList.toggle('dark', isDark);
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+
+    const moon = document.getElementById('theme-icon-moon');
+    const sun = document.getElementById('theme-icon-sun');
+    moon?.classList.toggle('hidden', isDark);
+    sun?.classList.toggle('hidden', !isDark);
+
+    const themeButton = document.getElementById('theme-toggle');
+    themeButton?.setAttribute('aria-label', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+    themeButton?.setAttribute('title', isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
+
+    const language = localStorage.getItem('portfolio-language') || 'es';
+    document.documentElement.lang = language;
+    document.querySelectorAll('[data-lang]').forEach((element) => {
+      element.classList.toggle('hidden', element.dataset.lang !== language);
+    });
+    const languageButton = document.getElementById('language-toggle');
+    if (languageButton) {
+      languageButton.textContent = language === 'es' ? 'EN' : 'ES';
+      languageButton.setAttribute('aria-label', language === 'es' ? 'Switch to English' : 'Cambiar a español');
+    }
+  }
+
+  if (!window.__portfolioThemeClickRegistered) {
+    window.__portfolioThemeClickRegistered = true;
+    document.addEventListener('click', (event) => {
+      const themeButton = event.target instanceof Element ? event.target.closest('#theme-toggle') : null;
+      if (!themeButton) return;
+      const isDark = document.documentElement.classList.contains('dark');
+      const nextTheme = isDark ? 'light' : 'dark';
+      document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+      syncPortfolioHeader();
+    });
+  }
+
+  if (!window.__portfolioLanguageClickRegistered) {
+    window.__portfolioLanguageClickRegistered = true;
+    document.addEventListener('click', (event) => {
+      const languageButton = event.target instanceof Element ? event.target.closest('#language-toggle') : null;
+      if (!languageButton) return;
+      const nextLanguage = document.documentElement.lang === 'es' ? 'en' : 'es';
+      document.documentElement.lang = nextLanguage;
+      localStorage.setItem('portfolio-language', nextLanguage);
+      syncPortfolioHeader();
+    });
+  }
+
+  syncPortfolioHeader();
+  document.addEventListener('DOMContentLoaded', syncPortfolioHeader);
+  document.addEventListener('astro:page-load', syncPortfolioHeader);
+</script>

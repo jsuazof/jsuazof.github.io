@@ -58,24 +58,6 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, activeSection
         window.applyPortfolioLanguage(localStorage.getItem('portfolio-language') || 'es');
         window.applyPortfolioTheme(localStorage.getItem('theme') || 'dark');
 
-        const languageButton = document.getElementById('language-toggle');
-        if (languageButton && !languageButton.dataset.initialized) {
-          languageButton.dataset.initialized = 'true';
-          languageButton.addEventListener('click', () => {
-            const current = document.documentElement.lang === 'es' ? 'es' : 'en';
-            window.applyPortfolioLanguage(current === 'es' ? 'en' : 'es');
-          });
-        }
-
-        const themeButton = document.getElementById('theme-toggle');
-        if (themeButton && !themeButton.dataset.initialized) {
-          themeButton.dataset.initialized = 'true';
-          themeButton.addEventListener('click', () => {
-            const nextTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-            window.applyPortfolioTheme(nextTheme);
-          });
-        }
-
         const mobileButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileButton && !mobileButton.dataset.initialized) {
