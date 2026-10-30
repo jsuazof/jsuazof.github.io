@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Explicit dark-mode baseline for reliable theme switching. */
+html[data-theme="dark"] body {
+  background-color: #020617 !important;
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] header {
+  border-color: #1e293b !important;
+  background-color: rgba(2, 6, 23, 0.95) !important;
+}
+
+html[data-theme="dark"] footer {
+  border-color: #1e293b !important;
+  background-color: #020617 !important;
+}
+
 /* Keep the alternate theme visually complete across every portfolio section. */
 html:not(.dark) body {
   background-color: #f8fafc !important;
