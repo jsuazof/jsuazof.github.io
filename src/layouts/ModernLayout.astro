@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import ModernHeader from "../components/ModernHeader.astro";
 import Footer from "../components/Footer.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, activeSection, ogType = "website" } = Astro.props;
 ---
@@ -10,7 +10,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, activeSection
 <html lang="es" class="dark">
   <head>
     <BaseHead title={title} description={description} image={image} ogType={ogType} />
-    {TRANSITION_API && <ViewTransitions />}
+    {TRANSITION_API && <ClientRouter />}
     <script is:inline>
       (function(){
         const saved = localStorage.getItem('theme') || 'dark';

@@ -1,5 +1,5 @@
-// src/content/config.ts
 import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
 // Schemas
 const blogSchema = ({ image }: { image: any }) =>
@@ -34,10 +34,12 @@ const storeSchema = ({ image }: { image: any }) =>
 
 // Collections
 const blogCollection = defineCollection({
+  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
   schema: blogSchema,
 });
 
 const storeCollection = defineCollection({
+  loader: glob({ base: "./src/content/store", pattern: "**/*.{md,mdx}" }),
   schema: storeSchema,
 });
 
