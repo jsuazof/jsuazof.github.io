@@ -1,10 +1,11 @@
 ---
 import ModernLayout from "../layouts/ModernLayout.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug";
+import createBlogSlugs from "../lib/createBlogSlugs";
 // Obtener los últimos posts del blog (si tienes)
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),);
 const last_posts = posts.slice(0, 3);
+const blogSlugs = createBlogSlugs(posts);
 ---
 
 <ModernLayout activeSection="home">
@@ -77,7 +78,7 @@ const last_posts = posts.slice(0, 3);
               title={post.data.title}
               img={post.data.heroImage}
               desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.title, post.slug)}
+              url={"/blog/" + blogSlugs.get(post.id)}
               target="_self"
               badge={post.data.badge}
             />{" "}
