@@ -58,4 +58,4 @@ This portfolio is automatically deployed to GitHub Pages using GitHub Actions.
 
 ---
 
-*Professional portfolio showcasing 30+ years of IT experience, specializing in cloud architecture, DevOps, and full-stack development.*
+*Professional portfolio showcasing 25+ years of IT experience, specializing in cloud architecture, DevOps, and full-stack development.*

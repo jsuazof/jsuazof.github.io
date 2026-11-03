@@ -1,0 +1,32 @@
+---
+title: "Desafio   PokeGuia"
+description: "Ejercicio práctico en Vue.js para consultar y mostrar información de Pokémon desde una interfaz web."
+custom_link_label: "Ver Código"
+custom_link: "https://github.com/jsuazof/Desafio---PokeGuia"
+updatedDate: "2022-02-21T21:50:21Z"
+pricing: "Open Source"
+badge: "Vue"
+checkoutUrl: "https://github.com/jsuazof/Desafio---PokeGuia"
+heroImage: "../../assets/images/itemPreview.webp"
+---
+
+## Desafio   PokeGuia
+
+Desafio---PokeGuia
+
+### 🚀 Características
+
+- **Lenguaje principal**: Vue
+- **Estrellas**: 0
+- **Última actualización**: 21/2/2022
+
+
+### 📋 Descripción
+
+Desafio---PokeGuia
+
+
+
+### 💻 Repositorio
+
+[Ver código en GitHub](https://github.com/jsuazof/Desafio---PokeGuia)

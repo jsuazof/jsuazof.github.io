@@ -49,6 +49,26 @@ pnpm run certificates:update
 - Genera arrays de JavaScript listos para copiar
 - Sugiere títulos y descripciones
 
+## 4. `security-remediation.sh`
+
+Realiza auditoría de los repositorios públicos y prepara correcciones controladas. Por defecto no modifica ni publica nada.
+
+```bash
+# Auditoría segura y reporte local
+pnpm security:audit
+
+# Modo explícitamente confirmado para crear correcciones y PRs
+bash scripts/security-remediation.sh all --apply
+```
+
+Características:
+- Lista los repositorios públicos y detecta indicadores de secretos sin mostrar valores.
+- Identifica `.gitignore` insuficientes y workflows con permisos o herramientas no fijadas.
+- Puede preparar ramas y PRs para el portfolio y los repositorios con hallazgos conocidos.
+- Nunca rota credenciales ni limpia el historial automáticamente.
+- Requiere autenticar GitHub con permisos suficientes para modificar workflows.
+
+
 ## 🛠️ Instalación de Dependencias
 
 ### Ubuntu/Debian
