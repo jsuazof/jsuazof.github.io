@@ -1,6 +1,7 @@
 ---
 // src/components/SideBar.astro
 import { Image } from "astro:assets";
+import ContactButton from "./ContactButton.astro";
 import profileImg from "../assets/images/profile.webp"; // ✅ Imagen importada desde src/
 const { sideBarActiveItemID } = Astro.props;
 ---
@@ -45,7 +46,7 @@ const { sideBarActiveItemID } = Astro.props;
     <li><a class="block py-3 px-4 text-base rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="/projects">Proyectos</a></li>
     <li><a class="block py-3 px-4 text-base rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" href="/certificates">Certificados</a></li>
     <li>
-      <span class="block py-3 px-4 text-base text-gray-700 dark:text-gray-300">jsuazof@gmail.com</span>
+      <ContactButton class="px-4" />
     </li>
   </ul>
   <script is:inline>
@@ -174,6 +175,6 @@ const { sideBarActiveItemID } = Astro.props;
         ></path>
       </svg>
     </a>
-    <span class="mx-3 text-sm text-gray-700 dark:text-gray-300">jsuazof@gmail.com</span>
+    <ContactButton class="mx-3" placement="up" />
   </div>
 </aside>

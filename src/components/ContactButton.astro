@@ -1,0 +1,125 @@
+---
+interface Props {
+  class?: string;
+  panelClass?: string;
+  placement?: "up" | "down";
+}
+
+const { class: className = "", panelClass = "", placement = "down" } = Astro.props;
+const panelPositionClass = placement === "up" ? "bottom-full mb-2" : "top-full mt-2";
+---
+
+<div class:list={["relative inline-flex", className]} data-contact-picker>
+  <button
+    type="button"
+    class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-500 hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-950"
+    data-contact-toggle
+    aria-expanded="false"
+  >
+    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+    <span data-lang="es">Contacto</span><span data-lang="en" class="hidden">Contact</span>
+  </button>
+
+  <div
+    class:list={["absolute left-0 z-50 hidden w-max max-w-[calc(100vw-2rem)] rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-xl", panelPositionClass, panelClass]}
+    data-contact-panel
+  >
+    <p class="mb-2 text-xs text-slate-400"><span data-lang="es">Correo electrónico</span><span data-lang="en" class="hidden">Email address</span></p>
+    <div class="flex items-center gap-2">
+      <span class="select-all text-sm font-medium text-white">jsuazof@gmail.com</span>
+      <button
+        type="button"
+        class="rounded-md bg-blue-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        data-copy-email
+        aria-label="Copiar correo electrónico"
+      >
+        <span data-lang="es">Copiar</span><span data-lang="en" class="hidden">Copy</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function copyEmail(button) {
+    const email = "jsuazof@gmail.com";
+
+    async function finish(success) {
+      const es = document.documentElement.lang !== "en";
+      const esLabel = button.querySelector('[data-lang="es"]');
+      const enLabel = button.querySelector('[data-lang="en"]');
+      if (esLabel) esLabel.textContent = success ? "Copiado" : "Seleccionar";
+      if (enLabel) enLabel.textContent = success ? "Copied" : "Select";
+      window.setTimeout(() => {
+        if (esLabel) esLabel.textContent = "Copiar";
+        if (enLabel) enLabel.textContent = "Copy";
+      }, 1800);
+      if (!success) {
+        const selection = window.getSelection();
+        const text = button.closest("[data-contact-picker]")?.querySelector(".select-all");
+        if (selection && text) {
+          const range = document.createRange();
+          range.selectNodeContents(text);
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+      }
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(() => finish(true)).catch(() => finish(false));
+      return;
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = email;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.select();
+    const success = document.execCommand("copy");
+    document.body.removeChild(textarea);
+    finish(success);
+  }
+
+  if (!window.__contactPickerClickRegistered) {
+    window.__contactPickerClickRegistered = true;
+
+    document.addEventListener("click", (event) => {
+      if (!(event.target instanceof Element)) return;
+
+      const copyButton = event.target.closest("[data-copy-email]");
+      if (copyButton) {
+        copyEmail(copyButton);
+        return;
+      }
+
+      const toggle = event.target.closest("[data-contact-toggle]");
+      if (toggle) {
+        const picker = toggle.closest("[data-contact-picker]");
+        const panel = picker?.querySelector("[data-contact-panel]");
+        const willOpen = panel?.classList.contains("hidden");
+        document.querySelectorAll("[data-contact-panel]").forEach((item) => item.classList.add("hidden"));
+        document.querySelectorAll("[data-contact-toggle]").forEach((item) => item.setAttribute("aria-expanded", "false"));
+        if (panel && willOpen) {
+          panel.classList.remove("hidden");
+          toggle.setAttribute("aria-expanded", "true");
+        }
+        return;
+      }
+
+      if (!event.target.closest("[data-contact-picker]")) {
+        document.querySelectorAll("[data-contact-panel]").forEach((item) => item.classList.add("hidden"));
+        document.querySelectorAll("[data-contact-toggle]").forEach((item) => item.setAttribute("aria-expanded", "false"));
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        document.querySelectorAll("[data-contact-panel]").forEach((item) => item.classList.add("hidden"));
+        document.querySelectorAll("[data-contact-toggle]").forEach((item) => item.setAttribute("aria-expanded", "false"));
+      }
+    });
+  }
+</script>
