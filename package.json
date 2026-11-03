@@ -1,9 +1,10 @@
 {
   "name": "jorge-suazo-portfolio",
-  "description": "Jorge Suazo - Cloud Architect & FullStack Developer Portfolio. Professional portfolio showcasing cloud architecture expertise, DevOps practices, and full-stack development skills.",
+  "description": "Jorge Suazo - Cybersecurity & Infrastructure Security Analyst portfolio focused on infrastructure security, cloud technologies, systems administration and security operations.",
   "type": "module",
   "version": "3.0.0",
   "private": true,
+  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,23 +14,27 @@
     "thumbnails": "node scripts/generate-thumbnails.js",
     "thumbnails:watch": "node scripts/watch-certificates.js",
     "certificates:update": "node scripts/update-certificates.js",
-    "certificates:setup": "./scripts/setup-certificates.sh"
+    "certificates:setup": "./scripts/setup-certificates.sh",
+    "projects:update": "node scripts/update-projects.js",
+    "security:audit": "bash scripts/security-remediation.sh audit",
+    "security:fix": "bash scripts/security-remediation.sh all --apply"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.3",
-    "@astrojs/rss": "^4.0.12",
-    "@astrojs/sitemap": "^3.4.2",
-    "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.12.9",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@astrojs/mdx": "^8.1.2",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@radix-ui/react-slot": "^1.5.0",
+    "astro": "^7.4.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.6.0",
-    "dayjs": "^1.11.13",
-    "sharp": "^0.34.3",
-    "tailwindcss": "^3.4.0"
+    "dayjs": "^1.11.23",
+    "sharp": "^0.35.5",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@tailwindcss/typography": "^0.5.20",
+    "autoprefixer": "^10.6.2",
+    "typescript": "^7.0.2"
   }
 }
