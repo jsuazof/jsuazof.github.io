@@ -16,8 +16,19 @@ const { title, description, image = '/', ogType = 'website' } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg?v=3" />
+<link rel="icon" type="image/png" href="/favicon.png?v=3" />
+<link rel="shortcut icon" href="/favicon.ico?v=3" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MF1EWG67W5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MF1EWG67W5');
+</script>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

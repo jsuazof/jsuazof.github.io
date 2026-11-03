@@ -1,7 +1,4 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'Jorge Suazo | Personal Portfolio Cloud Architect';
-export const SITE_DESCRIPTION = 'Personal Portfolio Website built with Astro and TailwindCSS';
+export const SITE_TITLE = 'Jorge Suazo | Cybersecurity & Infrastructure Security Analyst'
+export const SITE_DESCRIPTION = 'IT professional with 25+ years of experience in infrastructure, networking, systems administration, cloud technologies and cybersecurity.'
 export const GENERATE_SLUG_FROM_TITLE = true
 export const TRANSITION_API = true

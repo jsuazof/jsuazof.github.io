@@ -11,4 +11,3 @@ onlyBuiltDependencies:
 
 overrides:
   "esbuild@<0.28.1": "0.28.1"
-  postcss-selector-parser: "6.1.5"
