@@ -30,7 +30,7 @@ The professional goal is to contribute to secure, reliable, and resilient IT env
 - **Databases**: MySQL, Redis, cloud-native solutions
 - **Infrastructure**: Microservices, serverless architectures, container orchestration
 
-## 🎯 Live Demo
+## 🔗 Links of Interest
 - **Website**: [https://jsuazof.github.io](https://jsuazof.github.io)
 - **LinkedIn**: [https://www.linkedin.com/in/jorgesuazof](https://www.linkedin.com/in/jorgesuazof)
 - **GitHub**: [https://github.com/jsuazof](https://github.com/jsuazof)

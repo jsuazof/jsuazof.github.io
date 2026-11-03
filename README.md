@@ -30,7 +30,7 @@ Su objetivo profesional es contribuir a entornos tecnológicos seguros, confiabl
 - **Programación**: Java, Spring, JavaScript, React, Vue.js, Next.js
 - **Bases de Datos**: MySQL, Redis, soluciones nativas en la nube
 
-## 🎯 Demo en Vivo
+## 🔗 Links de Interés
 - **Sitio Web**: [https://jsuazof.github.io](https://jsuazof.github.io)
 - **LinkedIn**: [https://www.linkedin.com/in/jorgesuazof](https://www.linkedin.com/in/jorgesuazof)
 - **GitHub**: [https://github.com/jsuazof](https://github.com/jsuazof)
