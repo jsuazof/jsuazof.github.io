@@ -1,4 +1,6 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
+import { z } from "astro:schema";
 import { glob } from "astro/loaders";
 
 // Schemas
@@ -46,5 +48,25 @@ const storeCollection = defineCollection({
 export const collections = { blog: blogCollection, store: storeCollection };
 
 // Exports para tipado en otras páginas
-export type BlogSchema = z.infer<ReturnType<typeof blogSchema>>;
-export type StoreSchema = z.infer<ReturnType<typeof storeSchema>>;
+export interface BlogSchema {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: ImageMetadata;
+  badge?: string;
+  tags?: string[];
+}
+
+export interface StoreSchema {
+  title: string;
+  description: string;
+  custom_link_label: string;
+  custom_link?: string;
+  updatedDate: Date;
+  pricing?: string;
+  oldPricing?: string;
+  badge?: string;
+  checkoutUrl?: string;
+  heroImage?: ImageMetadata;
+}
