@@ -1,36 +1,34 @@
-# Jorge Suazo - Cloud Architect & FullStackDeveloper Portfolio
+# Jorge Suazo - Cloud & Infrastructure Security Engineer
 
 ![Jorge Suazo Portfolio](src/assets/images/profile.webp)
 
 [🇬🇧 English](README.en.md) | [🇪🇸 Español](README.md)
 
 
-Un portafolio personal completo que muestra experiencia en arquitectura de la nube, prácticas DevOps y desarrollo full-stack. Construido con tecnologías web modernas y diseñado para una presentación profesional.
+Portafolio personal enfocado en seguridad de infraestructura, seguridad de redes, seguridad cloud, operaciones de seguridad y automatización con Python. Construido con Astro, TailwindCSS y TypeScript.
 
-## 🌟 Estudios Actuales
+## 🌟 Perfil Profesional
 
-Actualmente inscrito en el programa **Talento Digital**, enfocado en **Fundamentos de Arquitecto Cloud** con **AWS** como plataforma principal. Este programa incluye formación en:
+Profesional TI con más de 25 años de experiencia en infraestructura, redes, administración de sistemas y tecnologías cloud. Actualmente fortalece su especialización en ciberseguridad mediante formación en operaciones de seguridad, análisis de logs, identificación de vulnerabilidades y automatización con Python.
 
-- Diseño e implementación de infraestructura en la nube
-- Servicios de AWS y mejores prácticas
-- Metodologías DevOps y automatización
-- Patrones de arquitectura escalable
-- Seguridad y cumplimiento en entornos cloud
+Su objetivo profesional es contribuir a entornos tecnológicos seguros, confiables y resilientes.
 
 ## 🚀 Secciones del Portafolio
 
 ### Secciones Profesionales
-- **Inicio**: Presentación profesional y resumen de habilidades
-- **Proyectos**: Implementaciones reales y soluciones
-- **CV**: Experiencia profesional y habilidades técnicas
+- **Inicio**: Presentación profesional, perfil y áreas de especialización
+- **Proyectos**: Infraestructura, cloud, ciberseguridad, automatización y desarrollo
 - **Certificados**: Certificaciones y logros de formación
 
 ### Capacidades Técnicas
+- **Seguridad**: Seguridad de infraestructura, redes, cloud y operaciones de seguridad
+- **Sistemas**: Windows, Linux, Active Directory, hardening, respaldos y recuperación
+- **Monitoreo y Redes**: Arquitectura de redes, perímetro, accesos y monitoreo de infraestructura
+- **Automatización**: Python
 - **Plataformas Cloud**: AWS, Google Cloud Platform, Oracle Cloud Infrastructure
 - **Herramientas DevOps**: Docker, Kubernetes, Terraform, CloudFormation, CI/CD
 - **Programación**: Java, Spring, JavaScript, React, Vue.js, Next.js
 - **Bases de Datos**: MySQL, Redis, soluciones nativas en la nube
-- **Infraestructura**: Microservicios, arquitecturas serverless, orquestación de contenedores
 
 ## 🎯 Demo en Vivo
 - **Sitio Web**: [https://jsuazof.github.io](https://jsuazof.github.io)
@@ -144,4 +142,4 @@ Este portafolio se despliega automáticamente en GitHub Pages usando GitHub Acti
 
 ---
 
-*Portafolio profesional con más de 25 años de experiencia en TI, especializado en arquitectura cloud, DevOps y desarrollo full-stack.*
+*Trayectoria profesional de más de dos décadas en infraestructura tecnológica, con especialización creciente en seguridad de infraestructura, operaciones de seguridad y automatización.*

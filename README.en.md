@@ -1,30 +1,29 @@
-# Jorge Suazo - Cloud Architect & FullStackDeveloper Portfolio
+# Jorge Suazo - Cloud & Infrastructure Security Engineer
 
 ![Jorge Suazo Portfolio](src/assets/images/profile.webp)
 
 [🇬🇧 English](README.en.md) | [🇪🇸 Español](README.md)
 
-A comprehensive personal portfolio website showcasing expertise in cloud architecture, DevOps practices, and full-stack development. Built with modern web technologies and designed for professional presentation.
+A personal portfolio focused on infrastructure security, network security, cloud security, security operations, and Python automation. Built with Astro, TailwindCSS, and TypeScript.
 
-## 🌟 Current Studies
+## 🌟 Professional Profile
 
-Currently enrolled in the **Talento Digital** program, focusing on **Cloud Architect Fundamentals** with **AWS** as the primary cloud platform. This program includes training in:
+IT professional with over 25 years of experience in infrastructure, networking, systems administration, and cloud technologies. Currently strengthening cybersecurity expertise through specialized training in security operations, log analysis, vulnerability identification, and Python automation.
 
-- Cloud infrastructure design and implementation
-- AWS services and best practices
-- DevOps methodologies and automation
-- Scalable architecture patterns
-- Security and compliance in cloud environments
+The professional goal is to contribute to secure, reliable, and resilient IT environments.
 
 ## 🚀 Portfolio Sections
 
 ### Professional Sections
-- **Home**: Professional introduction and skills overview
-- **Projects**: Real-world implementations and solutions
-- **CV**: Professional experience and technical skills
+- **Home**: Professional introduction, profile, and areas of expertise
+- **Projects**: Infrastructure, cloud, cybersecurity, automation, and software development
 - **Certificates**: Certifications and training achievements
 
 ### Technical Capabilities
+- **Security**: Infrastructure, network, cloud security, and security operations
+- **Systems**: Windows, Linux, Active Directory, hardening, backup, and recovery
+- **Monitoring and Networking**: Network architecture, perimeter security, access management, and infrastructure monitoring
+- **Automation**: Python
 - **Cloud Platforms**: AWS, Google Cloud Platform, Oracle Cloud Infrastructure
 - **DevOps Tools**: Docker, Kubernetes, Terraform, CloudFormation, CI/CD
 - **Programming**: Java, Spring, JavaScript, React, Vue.js, Next.js
@@ -58,4 +57,4 @@ This portfolio is automatically deployed to GitHub Pages using GitHub Actions.
 
 ---
 
-*Professional portfolio showcasing 25+ years of IT experience, specializing in cloud architecture, DevOps, and full-stack development.*
+*Professional background spanning more than two decades in technology infrastructure, increasingly focused on infrastructure security, security operations, and automation.*
