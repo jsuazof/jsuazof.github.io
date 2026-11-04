@@ -1,5 +1,6 @@
 ---
 import ModernLayout from "../layouts/ModernLayout.astro";
+import fs from "node:fs";
 
 const cybersecurity = [
   { title: "Google Cybersecurity Professional Certificate", provider: "Google / Coursera", kind: "Professional Certificate — Approved", file: "/certificates/Google_CyberSecurity.pdf" },
@@ -11,17 +12,34 @@ const cloud = [
   { title: "Talento Digital Cloud Architect Fundamentals", provider: "Talento Digital", kind: "Training Program / Course Completion — Approved", file: "" },
 ];
 const automation = [
-  { title: "Google IT Automation with Python", provider: "Google / Coursera", kind: "Course Completion Certificate — Approved", file: "/certificates/Coursera_google_python.pdf" },
+  { title: "Google IT Automation with Python", provider: "Google / Coursera", kind: "Professional Certificate — Approved", file: "/certificates/GoogleIT_AutomationWithPyton.pdf" },
+  { title: "Crash Course on Python", provider: "Google / Coursera", kind: "Course Completion Certificate — Approved", file: "/certificates/Coursera_google_python.pdf" },
+  { title: "Using Python to Interact with the Operating System", provider: "Google / Coursera", kind: "Course Completion Certificate — Approved", file: "/certificates/Coursera GB9VBPVHBF1B.pdf" },
   { title: "Google AI Essentials", provider: "Google / Coursera", kind: "Professional Certificate — Approved", file: "/certificates/Coursera EPQJMDE5POLH.pdf" },
 ];
 const software = [
   { title: "Talento Digital Full Stack Java", provider: "Talento Digital", kind: "Training Program / Course Completion — Approved", file: "" },
   { title: "Bootcamp de GitHub Actions", provider: "Microsoft", kind: "Course Completion Certificate — Approved", file: "/certificates/Certificado - Bootcamp de GitHub Actions.pdf" },
   { title: "CÓDIGOFEST 2025", provider: "Microsoft", kind: "Course / Event Certificate — Approved", file: "/certificates/Certificado - CÓDIGOFEST 2025 powered by Microsoft.pdf" },
+  { title: "Emprendimiento y Gestión Digital", provider: "IPCHILE", kind: "Diploma Certificate — Approved", file: "/certificates/Diplomado - Certificado IPCHILE.pdf" },
 ];
 const awsModules = [
-  ["Amazon Elastic Block Store", "AWS_AmazonElasticBlockStore.pdf"], ["Amazon RDS Service Primer", "AWS_AmazonRDS_ServicePrimer.pdf"], ["Amazon Simple Storage Service", "AWS_AmazonSimpleStorageService.pdf"], ["Amazon Transcribe Getting Started", "AWS_AmazonTranscribeGetting.pdf"], ["Architecting Serverless Solutions", "AWS_ArchitectingServerless.pdf"], ["AWS Backup Primer", "AWS_BackupPrimer.pdf"], ["AWS Basics of Managed Services", "AWS_BasicsManagedServices.pdf"], ["AWS Billing and Cost Management", "AWS_Billing_and_Cost.pdf"], ["AWS Command Line Interface", "AWS_Command_Line_Interface.pdf"], ["AWS Database Offerings", "AWS_DatabaseOfferings.pdf"], ["AWS Identity and Access Management", "AWS_IdentityAndAccessManagement.pdf"], ["AWS Introduction to Auto Scaling", "AWS_IntroductionToAutoScaling.pdf"], ["AWS Introduction to Management Console", "AWS_IntroductionToManagementConsole.pdf"], ["AWS Shared Responsibility Model", "AWS_SharedResponsibility.pdf"], ["AWS Subnets, Gateways & Route Tables", "AWS_SubnetsGateways_RouteTablesExplained.pdf"], ["AWS Technical Essentials", "AWS_TechnicalEssentials.pdf"], ["AWS Cloud Operating Models", "AWS_WorksWithinCloudOperatingModels.pdf"]
+  ["AWS Foundations: Getting Started with the AWS Cloud Essentials", "AWS_Foundations.pdf"], ["AWS Compute Services Overview", "AWS_ComputeServicesOverview.pdf"], ["Amazon Elastic Block Store", "AWS_AmazonElasticBlockStore.pdf"], ["Amazon RDS Service Primer", "AWS_AmazonRDS_ServicePrimer.pdf"], ["Amazon Simple Storage Service", "AWS_AmazonSimpleStorageService.pdf"], ["Amazon Transcribe Getting Started", "AWS_AmazonTranscribeGetting.pdf"], ["Architecting Serverless Solutions", "AWS_ArchitectingServerless.pdf"], ["AWS Backup Primer", "AWS_BackupPrimer.pdf"], ["AWS Basics of Managed Services", "AWS_BasicsManagedServices.pdf"], ["AWS Billing and Cost Management", "AWS_Billing_and_Cost.pdf"], ["AWS Command Line Interface", "AWS_Command_Line_Interface.pdf"], ["AWS Database Offerings", "AWS_DatabaseOfferings.pdf"], ["AWS Identity and Access Management", "AWS_IdentityAndAccessManagement.pdf"], ["AWS Introduction to Auto Scaling", "AWS_IntroductionToAutoScaling.pdf"], ["AWS Introduction to Management Console", "AWS_IntroductionToManagementConsole.pdf"], ["AWS Shared Responsibility Model", "AWS_SharedResponsibility.pdf"], ["AWS Subnets, Gateways & Route Tables", "AWS_SubnetsGateways_RouteTablesExplained.pdf"], ["AWS Technical Essentials", "AWS_TechnicalEssentials.pdf"], ["AWS Cloud Operating Models", "AWS_WorksWithinCloudOperatingModels.pdf"]
 ];
+
+const certificateGroups = [cybersecurity, cloud, automation, software];
+const missingCertificateFiles = certificateGroups
+  .flat()
+  .map((item) => item.file)
+  .filter((file) => file && !fs.existsSync(`public${file}`));
+const missingAwsModuleFiles = awsModules
+  .map(([, file]) => `/certificates/${file}`)
+  .filter((file) => !fs.existsSync(`public${file}`));
+const allMissingCertificateFiles = [...missingCertificateFiles, ...missingAwsModuleFiles];
+
+if (allMissingCertificateFiles.length) {
+  throw new Error(`Missing certificate PDF evidence: ${allMissingCertificateFiles.join(", ")}`);
+}
 ---
 <ModernLayout title="Certificados | Jorge Suazo" description="Formación y certificados en ciberseguridad, cloud computing, infraestructura, automatización y desarrollo." activeSection="certificates">
   <header class="mb-10">
