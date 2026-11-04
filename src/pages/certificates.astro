@@ -28,21 +28,6 @@ const software = [
 const awsModules = [
   ["AWS Foundations: Getting Started with the AWS Cloud Essentials", "AWS_Foundations.pdf"], ["AWS Compute Services Overview", "AWS_ComputeServicesOverview.pdf"], ["Amazon Elastic Block Store", "AWS_AmazonElasticBlockStore.pdf"], ["Amazon RDS Service Primer", "AWS_AmazonRDS_ServicePrimer.pdf"], ["Amazon Simple Storage Service", "AWS_AmazonSimpleStorageService.pdf"], ["Amazon Transcribe Getting Started", "AWS_AmazonTranscribeGetting.pdf"], ["Architecting Serverless Solutions", "AWS_ArchitectingServerless.pdf"], ["AWS Backup Primer", "AWS_BackupPrimer.pdf"], ["AWS Basics of Managed Services", "AWS_BasicsManagedServices.pdf"], ["AWS Billing and Cost Management", "AWS_Billing_and_Cost.pdf"], ["AWS Command Line Interface", "AWS_Command_Line_Interface.pdf"], ["AWS Database Offerings", "AWS_DatabaseOfferings.pdf"], ["AWS Identity and Access Management", "AWS_IdentityAndAccessManagement.pdf"], ["AWS Introduction to Auto Scaling", "AWS_IntroductionToAutoScaling.pdf"], ["AWS Introduction to Management Console", "AWS_IntroductionToManagementConsole.pdf"], ["AWS Shared Responsibility Model", "AWS_SharedResponsibility.pdf"], ["AWS Subnets, Gateways & Route Tables", "AWS_SubnetsGateways_RouteTablesExplained.pdf"], ["AWS Technical Essentials", "AWS_TechnicalEssentials.pdf"], ["AWS Cloud Operating Models", "AWS_WorksWithinCloudOperatingModels.pdf"]
 ];
-const pdfCertificates = fs.readdirSync("public/certificates")
-  .filter((file) => file.toLowerCase().endsWith(".pdf"))
-  .sort((a, b) => a.localeCompare(b, "en"))
-  .map((file) => ({
-    file,
-    title: file
-      .replace(/\.pdf$/i, "")
-      .replace(/^AWS_/i, "")
-      .replace(/^Certificado\s*-\s*/i, "")
-      .replace(/^Coursera\s+/i, "Coursera Certificate ")
-      .replace(/[_-]+/g, " ")
-      .replace(/\s+/g, " ")
-      .trim(),
-  }));
-
 const certificateGroups = [cybersecurity, cloud, automation, software];
 const missingCertificateFiles = certificateGroups
   .flat()
@@ -96,19 +81,6 @@ if (allMissingCertificateFiles.length) {
     <p class="mt-2 text-sm text-slate-400"><span data-lang="es">Cursos, módulos y fundamentos AWS. No se presentan como certificaciones profesionales de AWS.</span><span data-lang="en" class="hidden">AWS courses, modules and fundamentals. Not presented as AWS professional certifications.</span></p>
     <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {awsModules.map(([title, file]) => <a href={`/certificates/${file}`} target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-sm font-medium text-slate-200 transition hover:border-blue-500 hover:text-blue-300"><span class="mb-2 block text-xs uppercase text-slate-500"><span data-lang="es">Finalizado — Aprobado</span><span data-lang="en" class="hidden">Completed — Approved</span></span>{title}</a>)}
-    </div>
-  </section>
-
-  <section class="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-    <h2 class="text-xl font-bold text-white"><span data-lang="es">Todos los certificados en PDF</span><span data-lang="en" class="hidden">All certificate PDFs</span></h2>
-    <p class="mt-2 text-sm text-slate-400"><span data-lang="es">{pdfCertificates.length} documentos aprobados disponibles.</span><span data-lang="en" class="hidden">{pdfCertificates.length} approved documents available.</span></p>
-    <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {pdfCertificates.map(({ title, file }) => (
-        <a href={`/certificates/${encodeURI(file)}`} target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-sm font-medium text-slate-200 transition hover:border-blue-500 hover:text-blue-300">
-          <span class="mb-2 block text-xs uppercase text-emerald-400"><span data-lang="es">PDF aprobado</span><span data-lang="en" class="hidden">Approved PDF</span></span>
-          {title}
-        </a>
-      ))}
     </div>
   </section>
 </ModernLayout>
