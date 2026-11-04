@@ -7,7 +7,7 @@ const cybersecurity = [
   { title: "Formación en Ciberseguridad", provider: "Nodo / Desafío Latam", kind: "Training Program — Approved", file: "" },
 ];
 const cloud = [
-  { title: "Oracle Cloud Infrastructure Certification", provider: "Oracle", kind: "Cloud Certification / Training — Approved", file: "" },
+  { title: "Oracle Cloud Infrastructure 2023 Certified Foundations Associate", provider: "Oracle", kind: "Verified Certification — Approved", file: "", verificationUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=28D87126F09F999640C843A6ACFF0CD769E19A2FD6528FC17DEDA4B91CC9305C" },
   { title: "AWS Cloud Practitioner Essentials", provider: "AWS Training", kind: "Course Completion Certificate — Approved", file: "/certificates/AWS_CloudPractitioner.pdf" },
   { title: "Talento Digital Cloud Architect Fundamentals", provider: "Talento Digital", kind: "Training Program / Course Completion — Approved", file: "" },
 ];
@@ -72,9 +72,15 @@ if (allMissingCertificateFiles.length) {
       <section id={String(id)} class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
         <h2 class="mb-5 text-xl font-bold text-white">{title}</h2>
         <div class="space-y-3">
-          {(items as typeof cybersecurity).map((item) => (
+          {(items as Array<{ title: string; provider: string; kind: string; file: string; verificationUrl?: string }>).map((item) => (
             <article class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-              <div class="flex items-start justify-between gap-4"><div><h3 class="font-semibold text-slate-100">{item.title}</h3><p class="mt-1 text-sm text-slate-400">{item.provider}</p></div>{item.file && <a href={item.file} target="_blank" rel="noopener noreferrer" class="shrink-0 text-sm font-semibold text-blue-400 hover:text-blue-300"><span data-lang="es">Ver PDF</span><span data-lang="en" class="hidden">View PDF</span></a>}</div>
+              <div class="flex items-start justify-between gap-4">
+                <div><h3 class="font-semibold text-slate-100">{item.title}</h3><p class="mt-1 text-sm text-slate-400">{item.provider}</p></div>
+                <div class="flex shrink-0 gap-3">
+                  {item.file && <a href={item.file} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-400 hover:text-blue-300"><span data-lang="es">Ver PDF</span><span data-lang="en" class="hidden">View PDF</span></a>}
+                  {item.verificationUrl && <a href={item.verificationUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-blue-400 hover:text-blue-300"><span data-lang="es">Ver badge</span><span data-lang="en" class="hidden">View badge</span></a>}
+                </div>
+              </div>
               <p class="mt-3 inline-block rounded-full border border-blue-900 px-2.5 py-1 text-xs font-medium text-blue-300">{item.kind}</p>
             </article>
           ))}
