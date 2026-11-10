@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+@source "../";
+@source inline("{from,to}-{blue,green,purple,amber}-{50,100,500,600}{,/10,/20}");
+@source inline("dark:{from,to}-{blue,green,purple,amber}-{800,900}/30");
+@source inline("bg-{blue,green,purple,amber}-500");
+@source inline("text-{blue,green,purple,amber}-600");
+@source inline("dark:text-{blue,green,purple,amber}-400");
+@source inline("group-hover:{from,to}-{blue,green,purple,amber}-{500,600}/20");
 
 /* Explicit dark-mode baseline for reliable theme switching. */
 html[data-theme="dark"] body {
