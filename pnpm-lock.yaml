@@ -19,8 +19,8 @@ importers:
         specifier: ^4.0.19
         version: 4.0.19
       '@astrojs/sitemap':
-        specifier: ^3.7.5
-        version: 3.7.5
+        specifier: ^3.7.6
+        version: 3.7.6
       '@radix-ui/react-slot':
         specifier: ^1.5.0
         version: 1.5.0(react@19.2.4)
@@ -156,8 +156,8 @@ packages:
   '@astrojs/runtime@0.1.1':
     resolution: {integrity: sha512-2Tr9IJ4aQBPDFzlSLq139eWS9OZnuhL0yU2al8cCpnTE/RszygSyGIP8piBmEio1zDUaItb/+YxxsrmldUCBmg==}
 
-  '@astrojs/sitemap@3.7.5':
-    resolution: {integrity: sha512-rxSbFcxdcOoVRR02q0aFxyZ6chwXZpUOHMg8e+3iWPo7xYV4hlYBU4ztFd1Xl/pWtr6pe+TVCFKJfyPe0sp8iA==}
+  '@astrojs/sitemap@3.7.6':
+    resolution: {integrity: sha512-QEKD3ubC0iJxpNzC4KvcKdxSP97U5SjuQ16+VkmUwx1TT+Hq7TIV8QGm/d2pvkN6+3GqGXLRzm7j6lZxHETm3A==}
 
   '@astrojs/telemetry@3.4.2':
     resolution: {integrity: sha512-2JOMRUxJrBSfiVDfeKLv1wBmvSIx1Y6u2YEO8awZ9qSq3u/rNAiUyFdOYi8dHv91kHrmYEQX7pRDw0J4xyj3UA==}
@@ -734,9 +734,6 @@ packages:
     resolution: {integrity: sha512-BCNiY0a1ZjdOHVqw7kyb7U72BwfMF3dfUuN+tQsLWky/J5JOI/r7abibglXfygrZhVO/3u3V+E25kkKTeMkXaQ==}
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
-
-  '@tybys/wasm-util@0.10.4':
-    resolution: {integrity: sha512-W3c4gRigFS0T/Ma4qIYF3GDAc5AQdHb1yL5znJT1Zv1YaD9Kitx656wBjvr19qbiosmZT8lWDM5BEMynUqX65A==}
 
   '@tybys/wasm-util@0.10.5':
     resolution: {integrity: sha512-dOGOPxlaNV+G046mZzN+9C0dAcQZeSKcXiVaM0TYy/LM4ttTmgSBDxYfovcYI8Em3+eAbiAYpvWLOv8+ZVRJKA==}
@@ -1757,7 +1754,7 @@ snapshots:
       '@oslojs/encoding': 1.1.0
       clsx: 2.1.1
 
-  '@astrojs/sitemap@3.7.5':
+  '@astrojs/sitemap@3.7.6':
     dependencies:
       sitemap: 10.0.0
       zod: 4.6.7
@@ -2033,14 +2030,14 @@ snapshots:
     dependencies:
       '@emnapi/core': 1.11.1
       '@emnapi/runtime': 1.11.1
-      '@tybys/wasm-util': 0.10.4
+      '@tybys/wasm-util': 0.10.5
     optional: true
 
   '@napi-rs/wasm-runtime@1.2.7(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)':
     dependencies:
       '@emnapi/core': 1.11.3
       '@emnapi/runtime': 1.11.3
-      '@tybys/wasm-util': 0.10.4
+      '@tybys/wasm-util': 0.10.5
     optional: true
 
   '@nodable/entities@3.1.0': {}
@@ -2224,11 +2221,6 @@ snapshots:
       '@tailwindcss/oxide': 4.3.5
       tailwindcss: 4.3.5
       vite: 8.3.8(@types/node@26.6.6)(jiti@2.7.0)(yaml@2.9.1)
-
-  '@tybys/wasm-util@0.10.4':
-    dependencies:
-      tslib: 2.9.1
-    optional: true
 
   '@tybys/wasm-util@0.10.5':
     dependencies:
